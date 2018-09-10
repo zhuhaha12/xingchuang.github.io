@@ -1,0 +1,1479 @@
+@charset "utf-8";
+.wrap{max-width:1200px; width:100%; margin:0 auto;}
+.fl{float: left;}
+.fr{float: right;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
+.text-over{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.over{overflow: hidden;}
+.relative{position: relative;z-index: 1;}
+.absolute{position: absolute;z-index: 1;}
+.fixed{position: fixed;z-index: 1;}
+.inline{display: inline;}
+.block{display: block;}
+.inline-block{display: inline-block;}
+.hide{display: none;}
+.max-w100{max-width: 100%;}
+.max-h100{max-height: 100%;}
+.min-w1200{min-width: 1200px;}
+.middle{vertical-align: middle;}
+.middle-span{display: inline-block;height: 100%;vertical-align: middle;}
+.trans{-webkit-transition:all 300ms ease 0s; -moz-transition:all 300ms ease 0s; -ms-transition:all 300ms ease 0s; -o-transition:all 300ms ease 0s; transition:all 300ms ease 0s;}
+.trans600{-webkit-transition:all 600ms ease 0s; -moz-transition:all 600ms ease 0s; -ms-transition:all 600ms ease 0s; -o-transition:all 600ms ease 0s; transition:all 600ms ease 0s;}
+.trans900{-webkit-transition:all 900ms ease 0s; -moz-transition:all 900ms ease 0s; -ms-transition:all 900ms ease 0s; -o-transition:all 900ms ease 0s; transition:all 900ms ease 0s;}
+.youyuan{font-family: 'youyuan';}
+/*.zyuansj{font-family: 'zyuansj';}*/
+.zyuansj{font-family: 'cyjzhongy55c7c4fce5a74';} 	/* 创艺简中圆 */
+.aurorabc{font-family: 'aurorabc';}
+.itcavant{font-family: 'itcavant';}
+.helvetica{font-family: 'helvetica';}
+.fz0{font-size: 0px;-webkit-text-size-adjust:none;}		/* 一般用来去除inline-block后标签换行而留下的间距 */
+.grayscale .grayscale-img{filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\' x=\'0\' y=\'0\' width=\'100%\' height=\'100%\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); -webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%); -o-filter: grayscale(100%);filter: grayscale(100%);filter: gray;}
+.grayscale:hover .grayscale-img{-webkit-filter: grayscale(0%);-moz-filter: grayscale(0%);-ms-filter: grayscale(0%);-o-filter: grayscale(0%);filter: grayscale(0%);filter: none;}
+.bwWrapper{position: relative;display: block;}
+.show-1200{display: none;}
+.show-970{display: none;}
+.show-640{display: none;}
+
+@font-face{font-family: 'youyuan'; src: url("../fonts/youyuan.ttf"/*tpa=http://www.huatec.com/fonts/youyuan.ttf*/);}
+@font-face{font-family: 'zyuansj'; src: url("../fonts/zyuansj.ttf"/*tpa=http://www.huatec.com/fonts/zyuansj.ttf*/);}
+@font-face{font-family: 'aurorabc'; src: url("../fonts/aurorabc.ttf"/*tpa=http://www.huatec.com/fonts/aurorabc.ttf*/);}
+@font-face{font-family: 'itcavant'; src: url("../fonts/itcavant.otf"/*tpa=http://www.huatec.com/fonts/itcavant.otf*/);}
+@font-face{font-family: 'helvetica'; src: url("../fonts/helveticaneueltpro-lt.otf"/*tpa=http://www.huatec.com/fonts/helveticaneueltpro-lt.otf*/);}
+
+@-moz-keyframes rotary{
+	0% {-moz-transform:rotate(0deg);transform:rotate(0deg);}
+	50% {-moz-transform:rotate(180deg);transform:rotate(180deg);}
+	100% {-moz-transform:rotate(360deg);transform:rotate(360deg);}
+}
+@-webkit-keyframes rotary{
+	0% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+	50% {-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+	100% {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+@-o-keyframes rotary{
+	0% {-o-transform:rotate(0deg);transform:rotate(0deg);}
+	50% {-o-transform:rotate(180deg);transform:rotate(180deg);}
+	100% {-o-transform:rotate(360deg);transform:rotate(360deg);}
+}
+@keyframes rotary{
+	0% {-ms-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
+	50% {-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}
+	100% {-ms-transform:rotate(360deg);-moz-transform:rotate(360deg);-webkit-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}
+}
+
+@-moz-keyframes Rotation{
+    0% {-moz-transform: rotateY(0deg) scale(1,1);transform: rotateY(0deg) scale(1,1);}
+    50% {-moz-transform: rotateY(180deg) scale(1.5,1.5);transform: rotateY(180deg) scale(1.5,1.5);}
+    100%{-moz-transform: rotateY(360deg) scale(1,1);transform: rotateY(360deg) scale(1,1);}
+}
+
+@-webkit-keyframes Rotation{
+    0% {-webkit-transform: rotateY(0deg) scale(1,1);transform: rotateY(0deg) scale(1,1);}
+    50% {-webkit-transform: rotateY(180deg) scale(1.5,1.5);transform: rotateY(180deg) scale(1.5,1.5);}
+    100%{-webkit-transform: rotateY(360deg) scale(1,1);transform: rotateY(360deg) scale(1,1);}
+}
+@-o-keyframes Rotation{
+    0% {-o-transform: rotateY(0deg) scale(1,1);transform: rotateY(0deg) scale(1,1);}
+    50% {-o-transform: rotateY(180deg) scale(1.5,1.5);transform: rotateY(180deg) scale(1.5,1.5);}
+    100%{-o-transform: rotateY(360deg) scale(1,1);transform: rotateY(360deg) scale(1,1);}
+}
+
+@keyframes Rotation{
+    0% {-ms-transform: rotateY(0deg) scale(1,1);-moz-transform: rotateY(0deg) scale(1,1);-webkit-transform: rotateY(0deg) scale(1,1);-o-transform: rotateY(0deg) scale(1,1);transform: rotateY(0deg) scale(1,1);}
+    50% {-ms-transform: rotateY(180deg) scale(1.5,1.5);-moz-transform: rotateY(180deg) scale(1.5,1.5);-webkit-transform: rotateY(180deg) scale(1.5,1.5);-o-transform: rotateY(180deg) scale(1.5,1.5);transform: rotateY(180deg) scale(1.5,1.5);}
+    100%{-ms-transform:rotateY(360deg) scale(1,1);-moz-transform: rotateY(360deg) scale(1,1);-webkit-transform: rotateY(360deg) scale(1,1);-o-transform: rotateY(360deg) scale(1,1);transform: rotateY(360deg) scale(1,1);}
+}
+
+@-moz-keyframes Rotation2{
+    0% {-moz-transform: rotateX(0deg) scale(1,1);transform: rotateX(0deg) scale(1,1);}
+    50% {-moz-transform: rotateX(180deg) scale(1.5,1.5);transform: rotateX(180deg) scale(1.5,1.5);}
+    100%{-moz-transform: rotateX(360deg) scale(1,1);transform: rotateX(360deg) scale(1,1);}
+}
+
+@-webkit-keyframes Rotation2{
+    0% {-webkit-transform: rotateX(0deg) scale(1,1);transform: rotateX(0deg) scale(1,1);}
+    50% {-webkit-transform: rotateX(180deg) scale(1.5,1.5);transform: rotateX(180deg) scale(1.5,1.5);}
+    100%{-webkit-transform: rotateX(360deg) scale(1,1);transform: rotateX(360deg) scale(1,1);}
+}
+@-o-keyframes Rotation2{
+    0% {-o-transform: rotateX(0deg) scale(1,1);transform: rotateX(0deg) scale(1,1);}
+    50% {-o-transform: rotateX(180deg) scale(1.5,1.5);transform: rotateX(180deg) scale(1.5,1.5);}
+    100%{-o-transform: rotateX(360deg) scale(1,1);transform: rotateX(360deg) scale(1,1);}
+}
+
+@keyframes Rotation2{
+    0% {-ms-transform: rotateX(0deg) scale(1,1);-moz-transform: rotateX(0deg) scale(1,1);-webkit-transform: rotateX(0deg) scale(1,1);-o-transform: rotateX(0deg) scale(1,1);transform: rotateX(0deg) scale(1,1);}
+    50% {-ms-transform: rotateX(180deg) scale(1.5,1.5);-moz-transform: rotateX(180deg) scale(1.5,1.5);-webkit-transform: rotateX(180deg) scale(1.5,1.5);-o-transform: rotateX(180deg) scale(1.5,1.5);transform: rotateX(180deg) scale(1.5,1.5);}
+    100%{-ms-transform:rotateX(360deg) scale(1,1);-moz-transform: rotateX(360deg) scale(1,1);-webkit-transform: rotateX(360deg) scale(1,1);-o-transform: rotateX(360deg) scale(1,1);transform: rotateX(360deg) scale(1,1);}
+}
+
+@-moz-keyframes FlipVertically{
+    0% {-moz-transform: rotateX(0deg);transform: rotateX(0deg);}
+    50% {-moz-transform: rotateX(180deg);transform: rotateX(180deg);}
+    100%{-moz-transform: rotateX(360deg);transform: rotateX(360deg);}
+}
+
+@-webkit-keyframes FlipVertically{
+    0% {-webkit-transform: rotateX(0deg);transform: rotateX(0deg);}
+    50% {-webkit-transform: rotateX(180deg);transform: rotateX(180deg);}
+    100%{-webkit-transform: rotateX(360deg);transform: rotateX(360deg);}
+}
+@-o-keyframes FlipVertically{
+    0% {-o-transform: rotateX(0deg);transform: rotateX(0deg);}
+    50% {-o-transform: rotateX(180deg);transform: rotateX(180deg);}
+    100%{-o-transform: rotateX(360deg);transform: rotateX(360deg);}
+}
+
+@keyframes FlipVertically{
+    0% {-ms-transform: rotateX(0deg);-moz-transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-o-transform: rotateX(0deg);transform: rotateX(0deg);}
+    50% {-ms-transform: rotateX(180deg);-moz-transform: rotateX(180deg);-webkit-transform: rotateX(180deg);-o-transform: rotateX(180deg);transform: rotateX(180deg);}
+    100%{-ms-transform:rotateX(360deg);-moz-transform: rotateX(360deg);-webkit-transform: rotateX(360deg);-o-transform: rotateX(360deg);transform: rotateX(360deg);}
+}
+
+@-moz-keyframes ShakingLeft{0%{margin-left: 0;}100%{margin-left: 10px;}}
+@-webkit-keyframes ShakingLeft{0%{margin-left: 0;}100%{margin-left: 10px;}}
+@-o-keyframes ShakingLeft{0%{margin-left: 0;}100%{margin-left: 10px;}}
+@keyframes ShakingLeft{0%{margin-left: 0;}100%{margin-left: 10px;}}
+
+@-moz-keyframes ShakingRight{0%{margin-right: 0;}100%{margin-right: 10px;}}
+@-webkit-keyframes ShakingRight{0%{margin-right: 0;}100%{margin-right: 10px;}}
+@-o-keyframes ShakingRight{0%{margin-right: 0;}100%{margin-right: 10px;}}
+@keyframes ShakingRight{0%{margin-right: 0;}100%{margin-right: 10px;}}
+
+@-moz-keyframes ShakingBtm{
+    0%{-moz-transform:translateY(0);transform:translateY(0);}
+    100%{-moz-transform:translateY(10px);transform:translateY(5px);}
+}
+@-webkit-keyframes ShakingBtm{
+    0%{-webkit-transform:translateY(0);transform:translateY(0);}
+    100%{-webkit-transform:translateY(5px);transform:translateY(5px);}
+}
+@-o-keyframes ShakingBtm{
+    0%{-o-transform:translateY(0);transform:translateY(0);}
+    100%{-o-transform:translateY(5px);transform:translateY(5px);}
+}
+@keyframes ShakingBtm{
+    0%{transform:translateY(0);-ms-transform:translateY(0);-moz-transform:translateY(0);-webkit-transform:translateY(0);-o-transform:translateY(0);}
+    100%{transform:translateY(5px);-ms-transform:translateY(5px);-moz-transform:translateY(5px);-webkit-transform:translateY(5px);-o-transform:translateY(5px);}
+}
+
+html,body{width: 100%;overflow-x: hidden;}  /*手机兼容需要html和body标签都设置*/
+body{position: relative;z-index: 1;}
+
+.Body-Mask{width: 100%;height: 100%;background-color: #000;left: 0;top: 0;position: fixed;z-index: 50;opacity: .6;}
+#PlayVideo{width: 80%;height: 80%;left: 10%;top: 10%;position: fixed;z-index: 51;}
+#PlayVideo .close-btn{width: 60px;height: 60px;left: 100%;top: 0;position: absolute;z-index: 1;}
+
+.tmp-banner{width: 100%;left: 0;top: -100%;z-index: 25;}
+
+.innerheader{z-index: 5;}
+#header{width: 100%;height: 95px;left: 0;top: 0;z-index: 5;}
+#header.inner{background-color: rgba(0,0,0,.6);}
+#header.inner .wechat{border-color: #615f5f;}
+#header.inner .top-search{border-color: #615f5f;}
+.header-blank{width: 100%;height: 95px;font-size: 0;}
+#logo{margin: 25px 0 0 2%;}
+.nav{width: 53%;margin: 30px 0 30px 15%;}
+.nav > .item{margin: 0 3.2%;line-height: 36px;white-space: nowrap;}
+.nav > .item > a{font-size: 16px;color: #fff;padding: 0 3px;}
+.nav > .item > a:hover{color: #76c5f0;}
+.nav > .item.on > a{color: #76c5f0;}
+.nav .line{min-width: 40px;height: 2px;background-color: #76c5f0;top: 63px;}
+.top-rig{margin: 30px 25px 0 0;}
+.top-rig .wechat{width: 34px;height: 34px;border: 1px solid #444749;border-radius: 20px;background: url("../images/images/wechat.png"/*tpa=http://www.huatec.com/images/images/wechat.png*/) no-repeat center center;margin-left: 15px;opacity: .5;}
+.top-rig .wechat:hover{opacity: 1;}
+.top-rig .wechat .qrcode{right: 0;top: 150%;display: none;}
+.top-rig .wechat:hover .qrcode{display: block;}
+.top-search{width: 34px;height: 34px;border: 1px solid #444749;border-radius: 20px;opacity: .5;}
+.top-search:hover{opacity: 1;}
+.top-search > a{width: 32px;height: 32px;right: 0;top: 0;background: url("../images/images/search.png"/*tpa=http://www.huatec.com/images/images/search.png*/) no-repeat center center;z-index: 2;}
+.top-search .text{width: 0;height: 32px;line-height: 32px;font-size: 14px;color: #fff;border: 0;background: none;}
+.top-search .button{width: 32px;height: 32px;right: 0;top: 0;background: url("../images/images/search.png"/*tpa=http://www.huatec.com/images/images/search.png*/) no-repeat center center;border: 0;cursor: pointer;}
+.top-search.unfold{width: 145px;opacity: 1;}
+.top-search.unfold .text{width: 143px;padding: 0 35px 0 10px;}
+.top-search.unfold .text ~ a{display: none;}
+.top-menu{line-height: 34px;font-size: 24px;color: #76c5f0;opacity: .7;margin: 0 0 0 15px;display: none;cursor: pointer;}
+
+#banner{width: 100%;height: 100%;}
+#banner .banner-img{width: 1000%;height: 100%;left: 0;top: 0;white-space: nowrap;word-spacing: -5px;}
+#banner .banner-img .imgs{width: 100%;height: 100%;background-repeat: no-repeat; background-position: center top; background-size: cover;float: left;overflow: hidden;margin-left: -1px;}
+#banner .banner-a{font-size: 18px;color: #fff;margin: 0 17px;z-index: auto;}
+
+#banner .banner-btm{width: 100%;height: 50px;line-height: 50px;left: 0;bottom: 0;background-color: rgba(72,72,72,.5);}
+#banner .bulletin{width: 75%;margin-left: 2.34375%;}
+#banner .bulletin .t{padding-left: 35px;background: url("../images/images/bulletin.png"/*tpa=http://www.huatec.com/images/images/bulletin.png*/) no-repeat left center;font-size: 14px;color: #f9cf00;}
+#banner .bulletin .button{margin: 10px 15px;width: 12px;}
+#banner .bulletin .button > a{width: 100%;height: 6px;margin: 5px 0;}
+#banner .bulletin .bd{max-width: 500px;width: 75%;height: 30px;line-height: 30px;margin: 10px 0;}
+#banner .bulletin .bd .name{max-width: 425px;width: 70%;color: #fff;}
+#banner .bulletin .bd .name:hover{color: #76c5f0;}
+#banner .bulletin .bd .time{color: #e2e2e2;}
+#banner .banner-hd{width: 18%;max-width: 240px;margin-right: 1.9791%;}
+#banner .banner-hd .i{width: 15%;height: 30px;line-height: 30px;margin: 10px 5%;display: inline-block;}
+#banner .banner-hd .i::after{width: 100%;height: 3px;background-color: #fff;content: '';display: inline-block;vertical-align: middle;}
+#banner .banner-hd .i.on::after{background-color: #76c5f0;}
+#banner .downBtn{width: 50px;height: 50px;left: 50%;bottom: 10%;margin-left: -25px;background-image: url("../images/images/downBtn-0.png"/*tpa=http://www.huatec.com/images/images/downBtn-0.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;z-index: 5;}
+#banner .font-box{width: 90%;margin: 0 auto;white-space: normal;}
+#banner .font-box .f0{font-size: 40px/*70px*/;color: #fff;opacity: 0;z-index: auto;}
+#banner .font-box .f1{width: auto;line-height: 75px;font-size: 80px;color: #76c5f0;border-bottom: 2px solid #76c5f0;opacity: 0;z-index: auto;}
+#banner .font-box .f2{line-height: 24px;font-size: 16px;color: #fff;/*opacity: 0;*/z-index: auto;}
+#banner .font-box .f0.active{opacity: 1;}
+#banner .font-box .f1.active{opacity: 1;}
+#banner .font-box .f2.active{opacity: 1;}
+/*#banner .active .font-box .f0{font-size: 40px;opacity: 1;}
+#banner .active .font-box .f1{opacity: 1;}
+#banner .active .font-box .f2{opacity: 1;}*/
+#banner .table{width: 100%;height: 100%;display: table;}
+#banner .table-cell{display: table-cell;}
+
+.innerBanner > a{width: 100%;height: 100%;left: 0;top: 0;}
+.innerBanner > img{margin-left: auto;margin-right: auto;}
+
+
+.index-bg{width: 100%;height: 100%;background: url("../images/images/index-bg.jpg"/*tpa=http://www.huatec.com/images/images/index-bg.jpg*/) no-repeat center top;}
+.index-introduce{padding-top: 3%;}
+.index-introduce .title{margin-bottom: 2%;}
+.index-introduce .t1{font-size: 40px;color: #6bbeeb;}
+.index-introduce .t2{font-size: 14px;color: #81c2e6;letter-spacing: 6px;}
+.index-introduce .introduces{width: 222px;height: 380px;margin-left: 102px;}
+.index-introduce .introduces:first-child{margin-left: 0;}
+.index-introduce .introduces .ico{height: 252px;}
+.index-introduce .introduces .ico a{width: 100%;height: 100%;left: 0;top: 0;z-index: 4;}
+.index-introduce .introduces .bg{width: 100%;height: 100%;left: 0;top: 0;}
+.index-introduce .introduces .bg-0{background: url("../images/images/hexagon-0.png"/*tpa=http://www.huatec.com/images/images/hexagon-0.png*/) no-repeat;}
+.index-introduce .introduces .bg-1{background: url("../images/images/hexagon-1.png"/*tpa=http://www.huatec.com/images/images/hexagon-1.png*/) no-repeat;opacity: 0;}
+.index-introduce .introduces .bg-0.bgl{clip: rect(0, 111px, 0, 0);}
+.index-introduce .introduces .bg-0.bgr{clip: rect(252px, 222px, 252px, 111px);}
+.index-introduce .introduces.bg-show .bg-0.bgl{clip: rect(0, 111px, 252px, 0);}
+.index-introduce .introduces.bg-show .bg-0.bgr{clip: rect(0, 222px, 252px, 111px);}
+/*.index-introduce .introduces .bg-1.bgl{clip: rect(252px, 111px, 0, 0);}
+.index-introduce .introduces .bg-1.bgr{clip: rect(252px, 222px, 252px, 111px);}*/
+.index-introduce .introduces .i{width: 102px;height: 92px;left: 50%;top: 50%;margin: -46px 0 0 -51px;}
+.index-introduce .introduces .i0.s0{background: url("../images/images/index-item-0-0.png"/*tpa=http://www.huatec.com/images/images/index-item-0-0.png*/) no-repeat center center;}
+.index-introduce .introduces .i1.s0{background: url("../images/images/index-item-1-0.png"/*tpa=http://www.huatec.com/images/images/index-item-1-0.png*/) no-repeat center center;}
+.index-introduce .introduces .i2.s0{background: url("../images/images/index-item-2-0.png"/*tpa=http://www.huatec.com/images/images/index-item-2-0.png*/) no-repeat center center;}
+.index-introduce .introduces .i3.s0{background: url("../images/images/index-item-3-0.png"/*tpa=http://www.huatec.com/images/images/index-item-3-0.png*/) no-repeat center center;}
+.index-introduce .introduces .i0.s1{background: url("../images/images/index-item-0-1.png"/*tpa=http://www.huatec.com/images/images/index-item-0-1.png*/) no-repeat -700% center;}
+.index-introduce .introduces .i1.s1{background: url("../images/images/index-item-1-1.png"/*tpa=http://www.huatec.com/images/images/index-item-1-1.png*/) no-repeat -700% center;}
+.index-introduce .introduces .i2.s1{background: url("../images/images/index-item-2-1.png"/*tpa=http://www.huatec.com/images/images/index-item-2-1.png*/) no-repeat -700% center;}
+.index-introduce .introduces .i3.s1{background: url("../images/images/index-item-3-1.png"/*tpa=http://www.huatec.com/images/images/index-item-3-1.png*/) no-repeat -600% center;}
+.index-introduce .introduces .name{font-size: 20px;color: #4ba8db;margin: 20px 0 0;}
+.index-introduce .introduces .name a{font-size: inherit;color: inherit;}
+.index-introduce .introduces .brief{font-size: 14px;color: #53b0e2;margin: 100px 0 0;}
+.index-introduce .introduces:hover .bg-0.bgl{clip: rect(0, 111px, 0, 0);}
+.index-introduce .introduces:hover .bg-0.bgr{clip: rect(252px, 222px, 252px, 111px);}
+.index-introduce .introduces:hover .bg-1{opacity: 1;-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}
+.index-introduce .introduces:hover .i{-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}
+.index-introduce .introduces:hover .s0{background-position: 102px center;}
+.index-introduce .introduces:hover .s1{background-position: center center;}
+.index-introduce .introduces:hover .brief{margin: 8px 0 0;-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}
+/*.index-introduce .introduces:hover .bg-1.bgl{clip: rect(0, 111px, 252px, 0);}
+.index-introduce .introduces:hover .bg-1.bgr{clip: rect(0, 222px, 252px, 111px);}*/
+
+.index-learn .title::after{width: 45px;height: 0;border-bottom: 1px solid #f9cf00;margin: 0 auto;display: block;content: '';}
+.index-learn .t1{font-size: 18px;color: #f9cf00;}
+.index-learn .t2{font-family: Arial;color: #f9cf00;}
+.index-learn .item{padding-left: 20px;font-size: 14px;color: #737373;margin: 0 2%;background: url("../images/images/list-0.png"/*tpa=http://www.huatec.com/images/images/list-0.png*/) no-repeat left center;}
+
+.inner-menu{border-bottom: 1px solid #eaeaea;}
+.inner-menu .t1{font-size: 24px;font-weight: bold;color: #666;}
+.inner-menu .t2{font-size: 10px;font-family: Arial;color: #b3b3b3;letter-spacing: 10px;}
+.inner-menu .line{width: 33px;height: 3px;background-color: #666;margin: 0 auto;}
+.inner-menu .menu-a{height: 50px;line-height: 50px;color: #939393;margin: 0 15px;}
+.inner-menu .menu-a:hover{color: #76c5f0;}
+.inner-menu .menu-a.on{color: #76c5f0;}
+.inner-menu .menu-a.on::after{width: 100%;height: 2px;background-color: #76c5f0;left: 0;bottom: -1px;position: absolute;z-index: 1;content: '';}
+
+.web-title .t1{font-size: 24px;font-weight: bold;color: #5c5c5c;}
+.web-title .t2{font-size: 10px;font-family: Arial;color: #5c5c5c;letter-spacing: 10px;}
+.web-title .line{width: 45px;height: 2px;background-color: #5c5c5c;margin: 0 auto;}
+.web-title .brief{line-height: 20px;color: #5c5c5c;}
+
+.about-brief .group-img{margin: 27px 0 0 -57px;}
+.about-brief .since{font-size: 30px;color: #cacaca;background: url("../images/images/since.png"/*tpa=http://www.huatec.com/images/images/since.png*/) no-repeat right center;padding: 55px 0 30px;top: 30px;right: 0;}
+.about-brief .main{width: 960px;top: 145px;right: 0;}
+.about-brief .title{line-height: 18px;font-size: 16px;color: #fff;background-color: #76c5f0;padding: 15px 40px 10px 25px;margin-left: 80px;}
+.about-brief .title span{font-family: Arial;font-size: inherit;}
+.about-brief .brief{line-height: 24px;font-size: 14px;color: #505050;background-color: #fff;padding: 30px 10px 30px 40px;text-align: justify;}
+.about-brief .line{width: 880px;height: 2px;background-color: #76c5f0;padding-right: 100000px;margin-right: -100000px;box-sizing: content-box;}
+
+.about-development{/*background: url(/images/images/development-bg.jpg) no-repeat center top;*/border-bottom: 1px solid #f5f4ef;position: relative;z-index: 1;}
+.about-development .web-title , .about-development .wrap , .about-development .info{position: relative;z-index: 2;}
+.about-development .info{width: 420px;height: 420px;margin: 2px auto 0;border-radius: 100%;}
+.about-development .info .bar{width: 80%;height: 100%;left: 10%;top: 0;/*white-space: nowrap;*/}
+.about-development .info .item{width: 100%;height: 100%;display: table;left: 0;top: 0;opacity: 0;}
+.about-development .info .item.on{opacity: 1;z-index: 2;}
+.about-development .info .r{display: table-row;}
+.about-development .info .c{display: table-cell;vertical-align: middle;}
+/*.about-development .info .item{display: none;}*/
+/*.about-development .info .item.show{display: block;}*/
+.about-development .info .name{font-size: 28px;color: #424242;}
+.about-development .info .brief{line-height: 18px;color: #818181;margin-top: 10px;}
+.about-development .info .line{width: 40px;height: 0;border-top: 1px solid #424242;margin: 25px auto;}
+.about-development .years{width: 100%;z-index: 2;}
+.about-development .segments{width: 100%;height: 22px;padding-right: 10000px;margin-right: -10000px;left: 0;top: 20px;background: url("../images/images/segments.png"/*tpa=http://www.huatec.com/images/images/segments.png*/) repeat-x left bottom;}
+.about-development .segments-1{width: 0;height: 22px;left: 0;top: 22px;border-bottom: 2px solid #f8bc58;}
+.about-development .years-box .bd{left: 0;z-index: 2;}
+.about-development .years-box .bar{white-space: nowrap;left: 0;}
+.about-development .years-box .item{width: 8.5%;background: #faf9f7 url("../images/images/year-0.png"/*tpa=http://www.huatec.com/images/images/year-0.png*/) no-repeat 50px bottom;margin-right: 35px;cursor: pointer;}
+.about-development .years-box .item span{font-size: inherit;}
+.about-development .years-box .item.on{font-size: 24px;background: #faf9f7 url("../images/images/year-1.png"/*tpa=http://www.huatec.com/images/images/year-1.png*/) no-repeat 50px bottom;}
+.about-development .years-box .item.on .y{color: #f8bc58;}
+.about-development .years-box .item.on span{font-family: 'aurorabc';font-size: 28px;color: #f8bc58;}
+.about-development .years-box .y{height: 28px;line-height: 28px;font-size: 20px;color: #787878;padding: 20px 20px 0 5px;box-sizing: content-box;}
+.about-development .button-box{border-top: 1px solid #e5e5e3;}
+.about-development .button{width: 30px;height: 30px;margin: 0 10px;}
+.about-development .prev{background: url("../images/images/btn-l-0.png"/*tpa=http://www.huatec.com/images/images/btn-l-0.png*/) no-repeat;-ms-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
+.about-development .next{background: url("../images/images/btn-l-0.png"/*tpa=http://www.huatec.com/images/images/btn-l-0.png*/) no-repeat;-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}
+.about-development .prev:hover{background: url("../images/images/btn-r-1.png"/*tpa=http://www.huatec.com/images/images/btn-r-1.png*/) no-repeat;-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}
+.about-development .next:hover{background: url("../images/images/btn-r-1.png"/*tpa=http://www.huatec.com/images/images/btn-r-1.png*/) no-repeat;-ms-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
+.about-development .turn-round{width: 61.25%;max-height: 100%;left: 50%;top: 0;margin-left: -30.625%;}
+.about-development .turn-round .round{top: -56px;-webkit-animation: rotary 4s linear 0s infinite normal;}
+.about-development .lightning{width: 48.916666%;top: 138px;}
+.about-development .lightning.left{left: -30%;}
+.about-development .lightning.right{right: -30%;-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);-o-transform:scaleX(-1);transform:scaleX(-1);}
+.about-development .lightning .bar{white-space: nowrap;}
+
+.m-development{width: 95%;margin: 0 auto 50px;}
+.m-development .item{margin-bottom: 10px;}
+.m-development .y{font-size: 24px;color: #666;}
+.m-development .i{margin: 0 0 10px 5%;}
+.m-development .name{font-size: 16px;}
+.m-development .brief{font-size: 14px;}
+
+
+.about-brand{height: 715px;background: url("../images/images/brand-bg.jpg"/*tpa=http://www.huatec.com/images/images/brand-bg.jpg*/) no-repeat center top;}
+.brand-item{width: 29%;margin-left: 6.5%;padding-bottom: 1000px;margin-bottom: -1000px;vertical-align: top;}
+.brand-item:first-child{margin-left: 0;}
+.brand-item .ico{max-width: 272px;width: 78%;margin: 35px auto 0;}
+.brand-item .i{width: 100%; height: 100%; left: 0;top: 0; z-index: 3;}
+.brand-item .bg-line{width: 100%;left: 0;top: 5%;}
+.brand-item .ico-bg{width: 100%;z-index: 2;}
+.brand-item .name{font-size: 20px;color: #3a3a3a;margin-top: 25px;}
+.brand-item .brief{font-size: 14px;color: #727272;margin-top: 10px;}
+.brand-item .main-box{width: 100%;left: -100%;top: 0;}
+.brand-item .main-box .bor{min-height: 335px;border: 3px solid transparent;background-color: rgba(255,255,255,.95);padding: 55px 28px 55px 35px;}
+.brand-item .main-title{font-size: 20px;color: #3b3b3b;}
+.brand-item .main-subtitle{font-size: 14px;color: #727272;}
+.brand-item .main-brief{color: #4c4c4c;line-height: 22px;text-align: justify;margin-top: 25px;}
+.brand-item .plus{width: 44px;height: 44px;background: url("../images/images/plus.png"/*tpa=http://www.huatec.com/images/images/plus.png*/) no-repeat center center;right: 0;top: 0;}
+/*.brand-item.i0 .bg-line{background: url(/images/images/brand-line-0.png) no-repeat center center / 100% auto;}
+.brand-item.i1 .bg-line{background: url(/images/images/brand-line-1.png) no-repeat center center / 100% auto;}
+.brand-item.i2 .bg-line{background: url(/images/images/brand-line-2.png) no-repeat center center / 100% auto;}
+.brand-item.i0 .ico-bg{background: url(/images/images/brand-bg-0.png) no-repeat center center / 100% auto;}
+.brand-item.i1 .ico-bg{background: url(/images/images/brand-bg-1.png) no-repeat center center / 100% auto;}
+.brand-item.i2 .ico-bg{background: url(/images/images/brand-bg-2.png) no-repeat center center / 100% auto;}*/
+.brand-item.i0 .main-box .bor{border-color: #36d199}
+.brand-item.i1 .main-box .bor{border-color: #86e8e3}
+.brand-item.i2 .main-box .bor{border-color: #ffdda0}
+.brand-item.i0 .plus{background-color: #36d199}
+.brand-item.i1 .plus{background-color: #86e8e3}
+.brand-item.i2 .plus{background-color: #ffdda0}
+/*.brand-item:hover .bg-line{-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}*/
+/*.brand-item:hover .ico-bg{-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}*/
+/*.brand-item:hover .main-box{left: 0;-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}*/
+
+.about-institute{height: 566px;background: url("../images/images/institute-bg.jpg"/*tpa=http://www.huatec.com/images/images/institute-bg.jpg*/) no-repeat center top;border-bottom: 1px solid #eaeaea;}
+
+.institute-item{width: 22%;height: 265px;padding-top: 25px;margin-left: 3.75%;}
+.institute-item:first-child{margin-left: 0;}
+.institute-item .ico{width: 85px;height: 85px;margin: 0 auto;}
+.institute-item .bor{width: 100%;height: 100%;left: -1px;top: -1px;border: 1px solid #d0d0d0;}
+.institute-item .name{font-size: 16px;color: #424242;margin-top: 25px;}
+.institute-item .line{width: 35px;height: 0;border-top: 1px solid #737373;margin: 15px auto;}
+.institute-item .brief{line-height: 18px;color: #5b5b5b;margin-top: 150px;}
+.institute-item:hover .bor{border-color: #81c3ec;-ms-transform:rotate(135deg);-moz-transform:rotate(135deg);-webkit-transform:rotate(135deg);-o-transform:rotate(135deg);transform:rotate(135deg);}
+.institute-item:hover .name{color: #6fbbeb;}
+.institute-item:hover .line{border-color: #6fbbeb;}
+.institute-item:hover .brief{margin-top: 0;-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}
+
+.about-img{width: 32.083333%;margin-left: 1.83333%;}
+.about-img:first-child{margin-left: 0;}
+
+
+#team{min-height: 400px;background: url("../images/images/team-bg.jpg"/*tpa=http://www.huatec.com/images/images/team-bg.jpg*/) repeat-y center top;}
+.team-category > a{line-height: 37px;font-size:14px;color: #646464;padding: 0 30px;border: 1px solid transparent;border-radius: 17px;}
+.team-category > .on{color: #76c5f0;border: 1px solid #76c5f0;}
+
+.team-list .list{padding: 40px 0;margin-bottom: 30px;}
+.team-list .list .img{width: 218px;height: 246px;left: 45px;top: 0;}
+.team-list .list .m{height: 113px;padding: 25px 30px 25px 300px;background-color: #fff;border: 1px solid #ededed;border-radius: 10px;box-sizing: content-box;}
+.team-list .list .name{font-size: 24px;color: #424242;}
+.team-list .list .title{font-size: 14px;color: #737373;}
+.team-list .list .brief{height: 60px;color: #5e5e5e;line-height: 20px;margin-top: 20px;}
+
+.rotation{animation: Rotation 1000ms linear;}
+.rotation2{animation: Rotation2 1000ms linear;}
+
+.service{top: 0;opacity: 1;}
+.service.load{top: 100px;opacity: .5;}
+.service-list , .service-list .wrap{}
+.service-list .img{width: 50%;height: 100%;box-sizing: content-box;}
+/*.service-list .img:hover img{-ms-transform:scale(1.1,1.1);-moz-transform:scale(1.1,1.1);-webkit-transform:scale(1.1,1.1);-o-transform:scale(1.1,1.1);transform:scale(1.1,1.1);}*/
+.service-list .m{width: 50%;height: 100%;box-sizing: content-box;}
+.service-list .m.left{background-color: #f8f8f8;padding-left: 10000px;margin-left: -10000px;}
+.service-list .m.rig{background-color: #fff;padding-right: 10000px;margin-right: -10000px;}
+.service-list .pad{height: 100%;}
+.service-list .m.left .pad{padding-left: 15px;padding-right: 105px;}
+.service-list .m.rig .pad{padding-right: 15px;padding-left: 105px;}
+.service-list .arrow{width: 0;height: 0;border-top: 18px solid transparent;border-bottom: 18px solid transparent;top: 80px;}
+.service-list .m.left .arrow{border-left: 18px solid #f8f8f8;right: -18px;}
+.service-list .m.rig .arrow{border-right: 18px solid #fff;left: -18px;}
+.service-list .name{font-size: 28px;color: #4d4d4d;}
+.service-list .brief{line-height: 20px;color: #606060;}
+.service-list .more{width: 50px;color: #979797;margin-top: 30px;white-space: nowrap;}
+.service-list .more i{width: 29px;height: 33px;background: url("../images/images/list-more-0.png"/*tpa=http://www.huatec.com/images/images/list-more-0.png*/) no-repeat; margin: 0 auto 12px;}
+.service-list .more:hover{color: #67c0f0;text-decoration: underline;}
+.service-list .more:hover i{background: url("../images/images/list-more-1.png"/*tpa=http://www.huatec.com/images/images/list-more-1.png*/) no-repeat;}
+.service-list.on{height: auto;}
+.service-list.on .wrap{max-width: 100%;}
+.service-list.on .img{width: 100%;height: auto;position: relative;z-index: 2;}
+.service-list.on .m{display: none;}
+
+.service-special{height: 100%;}
+.service-special .special-name{font-size: 45px;color: #76c5f0;margin: 25px 0;}
+.service-special .special-name.White{color: #fff;}
+.service-special .special-name.Black{color: #28292b;}
+.service-special .special-title{width: 90%;max-width: 850px;font-size: 18px;color: #b7b7b7;margin: -15px auto 0;}
+.service-special .Con{min-height: 0;}
+.service-special .service-down{width: 59px;height: 59px;background: url("../images/images/service-down.png"/*tpa=http://www.huatec.com/images/images/service-down.png*/) no-repeat;margin: 60px auto 0;border-radius: 100%;}
+
+.service-down{}
+
+.service-special{width: 100%;height: 100%;display: table;background-repeat: no-repeat;background-size: cover;}
+.service-special .cell{width: 100%;height: 100%;display: table-cell;vertical-align: middle;}
+
+.section:last-child .special-box{margin-bottom: 40px;}
+
+.special-box.i1 .bd{width: 90.3333%;margin: 0 auto;}
+.special-box.i1 .item{width: 50%;padding: 0 8.6715%;box-sizing: border-box;}
+.special-box.i1 .main{z-index: 2;}
+.special-box.i1 .img{width: 100%;height: 399px;display: table;}
+.special-box.i1 .cell-middle{display: table-cell;vertical-align: middle;}
+.special-box.i1 .img-1{width: 100%;left: 0;top: 0;opacity: 0;}
+.special-box.i1 .hexagon{width: 100%;height: 100%;background-image: url("../images/images/service-hexagon-line-0.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-line-0.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;left: 0;top: 0;}
+.special-box.i1 .name-0{font-size: 24px;color: #fff;}
+.special-box.i1 .name-1{font-size: 20px;color: #fff;opacity: .1;}
+.special-box.i1 .brief{font-size: 14px;color: #727272;}
+.special-box.i1 .button{top: 160px;}
+.special-box.i1 .prev{left: 0;}
+.special-box.i1 .next{right: 0;}
+.special-box.i1 .img:hover .img-1{opacity: 1;}
+.special-box.i1 .img:hover .name-0{color: #bc974d;}
+.special-box.i1 .img:hover .name-1{color: #bd984e;}
+
+.special-box.i2{margin: 5% auto 0;}
+.special-box.i2 .ext{width: 50%/*33.3333%*/;height: 450px;display: table;cursor: pointer;}
+.special-box.i2 .c{display: table-cell;vertical-align: middle;}
+/*.special-box.i2 .ext.shrink{width: 27.5%;}*/
+.special-box.i2 .ico{height: 140px;}
+.special-box.i2 .line{height: 12px;background: url("../images/images/service-segments.png"/*tpa=http://www.huatec.com/images/images/service-segments.png*/) no-repeat left center;top: 0;}
+.special-box.i2 .left .line{-ms-transform:rotateY(180deg);-moz-transform: rotateY(180deg);-webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg);background-position: right center;}
+.special-box.i2 .name{line-height: 50px;font-size: 20px;color: #7a7a7a;}
+.special-box.i2 .brief-round{width: 44.75%;height: 537px;margin: 0 auto;}
+.special-box.i2 .brief{width: 100%;line-height: 24px;font-size: 20px;color: #bd984e;padding: 0 25%;box-sizing: border-box;display: none;opacity: 0;z-index: 2;}
+.special-box.i2 .brief a{color: #bd984e;}
+.special-box.i2 .round{width: 100%;height: 100%;background-image: url("../images/images/service-ring.png"/*tpa=http://www.huatec.com/images/images/service-ring.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;left: 0;top: 0;animation: rotary 4s linear 0s infinite normal;-webkit-animation: rotary 4s linear 0s infinite normal;opacity: 0;}
+.special-box.i2 .on{width: 44.75%;-ms-transform:rotate(360deg);-moz-transform: rotate(360deg);-webkit-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);}
+.special-box.i2 .on .ico{display: none;}
+.special-box.i2 .on .name{display: none;}
+.special-box.i2 .on .round{opacity: 1;}
+.special-box.i2 .on .line{top: -40px;animation: rotary 600ms linear 0s infinite normal;-webkit-animation: rotary 600ms linear 0s infinite normal;opacity: 0;-webkit-transition:all 600ms ease 0s; -moz-transition:all 600ms ease 0s; -ms-transition:all 600ms ease 0s; -o-transition:all 600ms ease 0s; transition:all 600ms ease 0s;}
+.special-box.i2 .on .brief{display: block;opacity: 1;}
+
+.special-box.i3 .item{margin: 0 0 0 7.91666%;}
+.special-box.i3 .item.col1{width: 27.91666%;}
+.special-box.i3 .item.col2{width: 63.75%;}
+.special-box.i3 .item.col3{width: 100%;margin-left: 0;}
+.special-box.i3 .item.f{margin-left: 0;clear: both;}
+.special-box.i3 .top{padding-bottom: 15px;margin-bottom: 25px;}
+.special-box.i3 .top::before , .special-box.i3 .top::after{content: '';position: absolute;z-index: 1;}
+.special-box.i3 .top::before{width: 30px;height: 5px;background-color: #fff;left: 0;bottom: -2px;}
+.special-box.i3 .top::after{width: 100%;height: 1px;background-color: #fff;left: 0;bottom: 0;}
+.special-box.i3 .top.c2::before{background-color: #ffe1ab;}
+.special-box.i3 .top.c2::after{background-color: #ffe1ab;}
+.special-box.i3 .name_0{font-size: 80px;color: #76c5f0;}
+.special-box.i3 .name_1{font-size: 16px;color: #404040;}
+.special-box.i3 .brief{height: 120px;line-height: 24px;font-size: 14px;color: #404040;}
+
+.special-box.i4{margin-top: 5%;}
+.special-box.i4 .item{width: 29%;padding-bottom: 1000px;margin: 0 2.0833% -1000px;}
+.special-box.i4 .ico{width: 67.241379%;height: 264px;margin: 0 auto;}
+.special-box.i4 .hexagon{width: 100%;height: 100%;background-image: url("../images/images/service-hexagon-line-0.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-line-0.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;}
+.special-box.i4 .hexagon.h1{opacity: .5;-ms-transform:rotate(-29deg);-moz-transform:rotate(-29deg);-webkit-transform:rotate(-29deg);-o-transform:rotate(-29deg);transform:rotate(-29deg);}
+.special-box.i4 .title{font-size: 20px;color: #b7b7b7;}
+.special-box.i4 .main{width: 100%;left: -100%;top: 0;}
+.special-box.i4 .bor{min-height: 320px;max-height: 420px;background-color: rgba(255,255,255,.8);padding: 55px 20px 20px 35px;border: 3px solid #76c5f0;}
+.special-box.i4 .name-0{font-size: 20px;color: #3b3b3b;}
+.special-box.i4 .name-1{font-size: 14px;color: #727272;}
+.special-box.i4 .brief{line-height: 22px;color: #4c4c4c;}
+.special-box.i4 .plus{width: 44px;height: 44px;background: #76c5f0 url("../images/images/plus.png"/*tpa=http://www.huatec.com/images/images/plus.png*/) no-repeat center center;right: 0;top: 0;}
+.special-box.i4 .item:hover .hexagon.h0{-ms-transform:rotate(130deg);-moz-transform:rotate(130deg);-webkit-transform:rotate(130deg);-o-transform:rotate(130deg);transform:rotate(130deg);}
+.special-box.i4 .item:hover .hexagon.h1{-ms-transform:rotate(50deg);-moz-transform:rotate(50deg);-webkit-transform:rotate(50deg);-o-transform:rotate(50deg);transform:rotate(50deg);}
+.special-box.i4 .item:hover .main{left: 0;-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}
+
+.special-box.i5{max-width: 100%;}
+.special-box.i5 .focus-box{margin-top: 2%;}
+
+.special-box.i6 .box{margin-top: 3%;}
+.special-box.i6 .item{width: 20%;margin: 1% 0;}
+.special-box.i6 .img{width: 153px;height: 172px;line-height: 24px;font-size: 16px;color: #494949;background-image: url("../images/images/hexagon-2.png"/*tpa=http://www.huatec.com/images/images/hexagon-2.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;padding: 60px 20px;margin: 0 auto;}
+.special-box.i6 .img a{width: 100%;height: 100%;left: 0;top: 0;}
+.special-box.i6 .img:hover{color: #fff;background-image: url("../images/images/hexagon-3.png"/*tpa=http://www.huatec.com/images/images/hexagon-3.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;}
+.special-box.i6 .box-download{width: 60px;font-size: 16px;color: #67c0f0;margin: 2% auto 0;}
+.special-box.i6 .box-download i{width: 60px;height: 60px;background-color: #67c0f0;background-image: url("../images/images/download.png"/*tpa=http://www.huatec.com/images/images/download.png*/);background-repeat: no-repeat;background-position: center center;border-radius: 100%;margin: 0 auto;display: block;}
+
+.special-box.i7 .box-7{margin-top: 50px;}
+.special-box.i7 .bar{left: 0;white-space: nowrap;}
+.special-box.i7 .item{width: 100%;vertical-align: top;}
+.special-box.i7 .item-desc{font-size: 26px;color: #fff;padding: 10% 0;opacity: .8;}
+.special-box.i7 .button{top: 210px;}
+.special-box.i7 .prev{left: -100px;}
+.special-box.i7 .next{right: -100px;}
+.special-box.i7 .pyramid{width: 537px;height: 426px;background: url("../images/images/pyramid.png"/*tpa=http://www.huatec.com/images/images/pyramid.png*/) no-repeat;padding-top: 4px;margin-left: 45px;z-index: 2;}
+.special-box.i7 .pyramid .list{height: 102px;margin-bottom: 4px;}
+.special-box.i7 .pyramid .t{line-height: 102px;font-size: 20px;color: #adacad;}
+.special-box.i7 .pyramid .main{width: 705px;height: 100%;top: 0;}
+.special-box.i7 .pyramid .main .table{width: 100%;height: 100%;display: table;}
+.special-box.i7 .pyramid .main .cell{display: table-cell;vertical-align: middle;}
+.special-box.i7 .pyramid .main .name{font-size: 16px;color: #fff;}
+.special-box.i7 .pyramid .main .brief{line-height: 20px;color: #8b8b8b;margin-top: 6px;}
+.special-box.i7 .pyramid2{width: 280px;height: 220px;background-image: url("../images/images/pyramid.png"/*tpa=http://www.huatec.com/images/images/pyramid.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;opacity: .2;-ms-transform: rotateX(180deg);-moz-transform: rotateX(180deg);-webkit-transform: rotateX(180deg);-o-transform: rotateX(180deg);transform: rotateX(180deg);left: 0;top: 0;}
+.special-box.i7 .t0 .t{line-height: 145px;}
+.special-box.i7 .t0 .main{left: 435px;}
+.special-box.i7 .t1 .main{left: 460px;}
+.special-box.i7 .t2 .main{left: 500px;}
+.special-box.i7 .t3 .main{left: 565px;}
+
+.special-box.i9 .box .item{width: 170px;margin: 25px 4%;vertical-align: top;}
+.special-box.i9 .box .table{width: 100%;height: 100%;display: table;}
+.special-box.i9 .box .table-cell{display: table-cell;}
+.special-box.i9 .box .hexagon{height: 192px;background-image: url("../images/images/hexagon-4.png"/*tpa=http://www.huatec.com/images/images/hexagon-4.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;}
+.special-box.i9 .box .img{height: 80px;}
+.special-box.i9 .box .name{font-size: 18px;color: #7c7c7c;}
+.special-box.i9 .box .brief{color: #717171;padding: 0 15px;margin-top: 10px;}
+
+.special-box.i10 .box{margin-top: 170px;}
+.special-box.i10 .box .bar{left: 0;white-space: nowrap;}
+.special-box.i10 .box .item{width: 28.33333%;margin-right: 7.5%;vertical-align: top;}
+.special-box.i10 .box .item .title{font-size: 30px;color: #76c5f0;padding: 0 0 25px;margin: 0 0 25px;}
+.special-box.i10 .box .item .title::before{width: 30px;height: 5px;background-color: #ffe1ab;position: absolute;z-index: 1;left: 0;bottom: -2px;content: '';}
+.special-box.i10 .box .item .title::after{width: 100%;height: 1px;background-color: #ffe1ab;position: absolute;z-index: 1;left: 0;bottom: 0;content: '';}
+.special-box.i10 .box .item .brief{line-height: 24px;font-size: 14px;color: #d2d2d2;white-space: normal;}
+.special-box.i10 .box .hd{margin-top: 90px;}
+.special-box.i10 .box .hd a{width: 14px;height: 14px;background-color: #fff;border: 1px solid #fff;border-radius: 100%;margin: 0 7px;display: inline-block;cursor: pointer;}
+.special-box.i10 .box .hd .on{background-color: transparent;}
+
+.flat-box .bd{max-width: 680px;width: 680px;height: 611px;background-image: url("../images/images/flat.png"/*tpa=http://www.huatec.com/images/images/flat.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;padding: 32px 90px 0 97px;margin: 40px auto 0;}
+.flat-box .bar{left: 0;white-space: nowrap;}
+.flat-box .button{width: 36px;height: 70px;top: 210px;}
+.flat-box .prev{left: 0;background: url("../images/images/btn-l-2.png"/*tpa=http://www.huatec.com/images/images/btn-l-2.png*/) no-repeat;}
+.flat-box .next{right: 0;background: url("../images/images/btn-r-2.png"/*tpa=http://www.huatec.com/images/images/btn-r-2.png*/) no-repeat;}
+
+.instance-box-0{width: 830px;margin: 30px auto 0;}
+.instance-box-0 .t{font-size: 18px;color: #fff;}
+.instance-box-0 .t::after{width: 0;height: 0;border-bottom: 15px solid #bd984e;border-left: 15px solid transparent;border-right: 15px solid transparent;margin: 15px auto 25px;display: block;content: '';}
+.instance-box-0 .line{width: 72%;height: 0;left: 14%;margin: 0 auto;border-top: 1px dashed #555;}
+.instance-box-0 .line.top{top: 0;}
+.instance-box-0 .line.btm{bottom: 0;}
+.instance-box-0 .box-row{height: 135px;margin-bottom: 20px;}
+/*.instance-box-0 .box-row::before{width: 153px;height: 136px;background: url(/images/images/service-hexagon-2.png) no-repeat center center;position: absolute;z-index: 2;top: 0;left: 0;-ms-transform:rotateY(180deg);-moz-transform: rotateY(180deg);-webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg);content: '';}*/
+.instance-box-0 .box-row::after{width: 153px;height: 136px;background: url("../images/images/service-hexagon-2.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-2.png*/) no-repeat center center;position: absolute;z-index: 2;top: 0;right: 0;content: '';}
+.instance-box-0 .service-hexagon-0{width: 153px;height: 136px;background: url("../images/images/service-hexagon-0.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-0.png*/) no-repeat;top: 0;z-index: 3;}
+.instance-box-0 .service-hexagon-0.left{left: 0;}
+.instance-box-0 .service-hexagon-0.right{right: 0;}
+.instance-box-0 .table{width: 100%;height: 100%;display: table;}
+.instance-box-0 .table-cell{display: table-cell;}
+.instance-box-0 .title{width: 132px;height: 148px;margin: -6px 44px 0 11px;z-index: 3;}
+.instance-box-0 .title.bg{background: url("../images/images/service-hexagon-1.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-1.png*/) no-repeat;}
+.instance-box-0 .item{width: 115px;height: 100%;margin-right: 35px;}
+.instance-box-0 .item.c2{width: 285px;}
+.instance-box-0 .imgs{width: 115px;height: 100%;margin-right: 35px;}
+.instance-box-0 .icos{width: 88px;height: 100%;background-image: url("../images/images/service-hexagon-0.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-0.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;margin-right: 5px;}
+.instance-box-0 .b{font-size: 16px;color: #00b1f1;}
+.instance-box-0 .f{line-height: 24px;color: #e7e7e7;}
+.instance-box-0 .box-row:last-child .title{margin-right: 20px;}
+
+.service-box-1{margin-top: 40px;}
+.service-box-1 .table{width: 100%;height: 100%;display: table;}
+.service-box-1 .table-cell{display: table-cell;}
+.service-box-1 .hexagon{width: 234px;height: 264px;background: url("../images/images/hexagon-4.png"/*tpa=http://www.huatec.com/images/images/hexagon-4.png*/) no-repeat;margin: 0 3.75%;}
+.service-box-1 .hexagon .ico{height: 105px;}
+.service-box-1 .hexagon .name{font-size: 20px;color: #717171;}
+.service-box-1 .hexagon .brief{color: #717171;}
+.service-box-1 .curve{width: 83.83333333%;margin: 4px auto 20px;}
+.service-box-1 .sub-title{font-size: 24px;color: #606060;}
+.service-box-1 .icos{margin-top: 30px;}
+.service-box-1 .icos .ico{width: 5%;margin: 0 5.833333%;z-index: 2;}
+.service-box-1 .icos .name{font-size: 14px;color: #606060;margin-top: 35px;}
+.service-box-1 .icos .desk{width: 97.5%;left: 1.25%;top: 30px;}
+
+.service-box-2{margin-top: 35px;}
+.service-box-2 .table{width: 100%;height: 100%;display: table;z-index: 2;}
+.service-box-2 .table-cell{display: table-cell;}
+.service-box-2 .bar{left: 0;white-space: nowrap;}
+.service-box-2 .item{width: 100%;}
+.service-box-2 .title{font-size: 20px;color: #76c5f0;}
+.service-box-2 .title span{font-size: 30px;}
+.service-box-2 .b0{width: 82px;color: #28282a;background-color: #94ebe6;}
+.service-box-2 .b1{width: 152px;color: #2d2e30;background-color: #fff;}
+.service-box-2 .item-button{height: 34px;line-height: 34px;font-size: 14px;margin: 0 auto;border-radius: 20px;}
+.service-box-2 .round{width: 350px;height: 350px;margin: 0 auto;}
+.service-box-2 .rotary{width: 100%;height: 100%;left: 0;top: 0;background-image: url("../images/images/service-round.png"/*tpa=http://www.huatec.com/images/images/service-round.png*/);background-repeat: no-repeat;background-position: center center;background-size: cover;animation: rotary 4s linear 0s infinite normal;}
+.service-box-2 .school{width: 150px;top: 125px;}
+.service-box-2 .school.left{right: 102%;}
+.service-box-2 .school.left .service-arrow-0{-ms-transform:rotateY(180deg);-moz-transform: rotateY(180deg);-webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg);}
+.service-box-2 .left .service-arrow-0{animation: ShakingRight 1s linear 0s infinite alternate;}
+.service-box-2 .right .service-arrow-0{animation: ShakingLeft 1s linear 0s infinite alternate;}
+.service-box-2 .service-arrow-2{animation: ShakingBtm .5s linear 0s infinite alternate;}
+.service-box-2 .school.right{left: 102%;}
+.service-box-2 .s0{color: #50493d;}
+.service-box-2 .s1{color: #c39f63;}
+.service-box-2 .brief{line-height: 20px;font-size: 14px;color: #898989;}
+.service-box-2 .service-arrow-2{margin: 10px 0;}
+.service-box-2 .button{top: 200px;}
+.service-box-2 .button.prev{left: 0;}
+.service-box-2 .button.next{right: 0;}
+
+
+.m-service-special > .special-row{padding: 30px 0;}
+.m-service-special > .special-row .con{width: 90%;margin: 50px auto;}
+.m-service-special .special-name{font-size: 28px;margin: 20px 0;text-align: center;}
+.m-service-special .special-name.White{color: #fff;}
+.m-service-special .special-name.Black{color: #28292b;}
+.m-service-special .special-name.White + .special-title{color: #bbb;}
+.m-service-special .special-name.Black + .special-title{color: #333;}
+.m-service-special .special-title{font-size: 22px;margin-bottom: 10px;text-align: center;}
+.m-service-special .con{min-height: 300px;line-height: 24px;font-size: 14px;}
+.m-service-special .con *{line-height: inherit;font-family: inherit;font-size: inherit;color: inherit;}
+.m-service-special .r{margin-bottom: 10px;line-height: 26px;}
+.m-service-special .brief{line-height: 20px;font-size: 14px;color: #999;}
+
+.m-service-special .i1 .img{height: auto;margin-bottom: 20px;}
+.m-service-special .i1 .item{margin-bottom: 60px;}
+.m-service-special .i1 .item.fl{clear: both;}
+.m-service-special .i1 .hexagon{background: none;}
+
+.m-service-special .i2 .name-0{font-size: 16px;color: #333;}
+.m-service-special .i2 .name-1{font-size: 14px;color: #666;}
+
+.m-service-special .i3 .name-0{font-size: 26px;color: #76c5f0;display: inline-block;}
+.m-service-special .i3 .name-1{font-size: 16px;color: #404040;display: inline-block;}
+
+.m-service-special .i4 .name-0{font-size: 16px;color: #333;}
+.m-service-special .i4 .name-1{font-size: 14px;color: #666;}
+
+
+.focus-box .mask{width: 100%;height: 100%;left: 0;top: 0;background-color: #fff;opacity: .05;}
+.focus-box .bd{max-width: 1064px;width: 80%;/*width: 55.9375%;*/margin: 0 auto;z-index: 2;}
+.focus-box .bar{width: 100%;white-space: nowrap;left: 0;letter-spacing: -5px;}
+.focus-box .item{width: 100%;letter-spacing: normal;}
+.focus-box .item img{margin: 0 auto;}
+.focus-box .txt{width: 100%;height: 40px;line-height: 20px;color: #fff;background-color: rgba(0,0,0,.5);left: 0;bottom: 0;padding: 10px 15px;}
+.focus-box .button{width: 0;height: 0;padding: 6% 6% 0 0;top: 47%;}
+.focus-box .button.left{background-color: #bd984e;background-image: url("../images/images/btn-l-2.png"/*tpa=http://www.huatec.com/images/images/btn-l-2.png*/);background-repeat: no-repeat;background-position: center center;background-size: auto 58%;right: 100%;}
+.focus-box .button.right{background-color: #bd984e;background-image: url("../images/images/btn-r-2.png"/*tpa=http://www.huatec.com/images/images/btn-r-2.png*/);background-repeat: no-repeat;background-position: center center;background-size: auto 58%;left: 100%;}
+.focus-box .button.stop{background-color: #7b7b7b;}
+.focus-box .hd{max-width: 1064px;width: 80%;/*width: 55.9375%;*/margin: 10px auto 0;}
+.focus-box .hd .i{width: 13.96648%;margin-right: 20px;cursor: pointer;}
+.focus-box .hd .i::before{width: 100%;height: 100%;border: 2px solid transparent;position: absolute;z-index: 1;-webkit-transition:all 300ms ease 0s; -moz-transition:all 300ms ease 0s; -ms-transition:all 300ms ease 0s; -o-transition:all 300ms ease 0s; transition:all 300ms ease 0s;content: '';}
+.focus-box .hd .i.on::before{border-color: #e2b459;}
+
+#success .table{max-width: none;width: 100%;height: 100%;display: table;table-layout:fixed;}
+#success .table-cell{display: table-cell;}
+#success .success-bg-0{width: 100%;background-repeat: no-repeat;background-position: center center;background-size: cover;}
+#success .success-bg-1{width: 100%;background-repeat: no-repeat;background-position: center center;background-size: cover;}
+#success .success-bg-2{width: 100%;background-image: url("../images/images/success-bg-2.jpg"/*tpa=http://www.huatec.com/images/images/success-bg-2.jpg*/);background-repeat: no-repeat;background-position: center center;background-size: cover;}
+#success .success-bg-3{width: 100%;background: #2c2c2c url("../images/images/success-bg-3.jpg"/*tpa=http://www.huatec.com/images/images/success-bg-3.jpg*/) no-repeat center bottom;}
+#success .success-title-0{font-size: 44px;color: #fff;}
+#success .success-title-1{font-size: 24px;color: #fff;}
+#success .success-brief{font-size: 16px;color: #fff;}
+#success .success-desc{font-size: 14px;color: #fff;}
+#success .success-down{width: 59px;height: 59px;background: url("../images/images/service-down.png"/*tpa=http://www.huatec.com/images/images/service-down.png*/) no-repeat;margin: 100px auto 0;}
+#success .success-bg{height: 376px;background: url("../images/images/success-bg.jpg"/*tpa=http://www.huatec.com/images/images/success-bg.jpg*/) no-repeat center center;}
+#success .font-list{padding: 90px 0 0;}
+#success .font-list .item{width: 28.33333%;margin-left: 7.0833333%;vertical-align: top;}
+#success .font-list .item:first-child{margin-left: 0;}
+#success .font-list .item .top{font-size: 24px;color: #7fc8f0;padding-bottom: 25px;margin-bottom: 25px;}
+#success .font-list .item .top::before{width: 30px;height: 5px;background-color: #fff;bottom: -2px;left: 0;position: absolute;content: '';}
+#success .font-list .item .top::after{width: 100%;height: 1px;background-color: #fff;bottom: 0;left: 0;position: absolute;content: '';}
+#success .font-list .item .brief{line-height: 24px;font-size: 14px;color: #404040;}
+
+#success .slide-box .success-brief{margin-bottom: 40px;}
+#success .slide-box .bar{left: 0;white-space: nowrap;}
+#success .slide-box .item{width: 100%;}
+#success .slide-box .i{min-width: 29%;margin: 0 2.0833%;vertical-align: top;}
+#success .slide-box .ico{width: 67.241379%;height: 264px;margin: 0 auto;}
+#success .slide-box .hexagon{width: 100%;height: 100%;background-image: url("../images/images/service-hexagon-line-0.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-line-0.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;}
+#success .slide-box .hexagon.h1{opacity: .5;-ms-transform:rotate(-29deg);-moz-transform:rotate(-29deg);-webkit-transform:rotate(-29deg);-o-transform:rotate(-29deg);transform:rotate(-29deg);}
+#success .slide-box .title{font-size: 20px;color: #b7b7b7;}
+#success .slide-box .brief{font-size: 14px;color: #676767;}
+/*#success .slide-box .main{width: 100%;left: -100%;top: 0;}
+#success .slide-box .bor{min-height: 320px;max-height: 420px;background-color: #fff;padding: 55px 20px 20px 35px;border: 3px solid #76c5f0;}
+#success .slide-box .name-0{font-size: 20px;color: #3b3b3b;}
+#success .slide-box .name-1{font-size: 14px;color: #727272;}
+#success .slide-box .brief{line-height: 22px;color: #4c4c4c;}
+#success .slide-box .plus{width: 44px;height: 44px;background: #76c5f0 url(/images/images/plus.png) no-repeat center center;right: 0;top: 0;}
+#success .slide-box .item:hover .hexagon.h0{-ms-transform:rotate(130deg);-moz-transform:rotate(130deg);-webkit-transform:rotate(130deg);-o-transform:rotate(130deg);transform:rotate(130deg);}
+#success .slide-box .item:hover .hexagon.h1{-ms-transform:rotate(50deg);-moz-transform:rotate(50deg);-webkit-transform:rotate(50deg);-o-transform:rotate(50deg);transform:rotate(50deg);}
+#success .slide-box .item:hover .main{left: 0;-webkit-transition:all 600ms ease 600ms; -moz-transition:all 600ms ease 600ms; -ms-transition:all 600ms ease 600ms; -o-transition:all 600ms ease 600ms; transition:all 600ms ease 600ms;}*/
+#success .slide-box .hd{margin-top: 5%;}
+#success .slide-box .hd a{width: 6.25%;height: 10px;margin: 0 1.25%;display: inline-block;position: relative;z-index: 1;cursor: pointer;}
+#success .slide-box .hd a::after{width: 100%;height: 3px;background-color: #5d5d5d;left: 0;top: 4px;position: absolute;z-index: 1;content: '';}
+#success .slide-box .hd .on::after{background-color: #fff;}
+
+
+#success .box-0 .title{font-size: 24px;color: #bd984e;margin-bottom: 12px;}
+#success .box-0 .main{width: 40%;max-width: 412px;height: 412px;margin: 30px auto 0;}
+#success .box-0 .main > .table{z-index: 2;background: none;}
+#success .box-0 .main .name-0{font-size: 26px;color: #fff;}
+#success .box-0 .main .name-1{font-size: 30px;color: #fff;margin: 6px 0 45px;}
+#success .box-0 .main .m{width: 100%;left: 0;top: 50%;z-index: 3;}
+#success .box-0 .main .table:hover + .m{display: block;}
+#success .box-0 .round{width: 100%;height: 100%;background-image: url("../images/images/success-round.png"/*tpa=http://www.huatec.com/images/images/success-round.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;left: 0;top: 0;-webkit-animation: rotary 4s linear 0s infinite normal;}
+#success .box-0 .brief{width: 240px;font-size: 14px;color: #fff;background-color: #999;padding: 5px;top: 110%;white-space: normal;display: none;}
+#success .box-0 .left .brief{text-align: right;right: 0;}
+#success .box-0 .right .brief{text-align: left;left: 0;}
+#success .box-0 .i{font-size: 16px;color: #999;white-space: nowrap;z-index: 3;opacity: 0;}
+#success .box-0 .i.left{padding-right: 28px;background: url("../images/images/success-point.png"/*tpa=http://www.huatec.com/images/images/success-point.png*/) no-repeat right center;}
+#success .box-0 .i.right{padding-left: 28px;background: url("../images/images/success-point.png"/*tpa=http://www.huatec.com/images/images/success-point.png*/) no-repeat left center;}
+#success .box-0 .i.active{opacity: 1;margin: 0;}
+#success .box-0 .i:hover .brief{display: block;}
+#success .box-0 .i0{right: 50%;top: 45%;margin-right: -60px;}
+#success .box-0 .i1{right: 50%;bottom: 45%;margin-right: -60px;}
+#success .box-0 .i2{left: 50%;top: 45%;margin-left: -60px;}
+#success .box-0 .i3{left: 50%;bottom: 45%;margin-left: -60px}
+#success .box-0 .i0.active{left: auto;right: 134.184466%;top: 18%;}
+#success .box-0 .i1.active{left: auto;right: 137.184466%;top: auto;bottom: 5%;}
+#success .box-0 .i2.active{left: 132.184466%;right: auto;top: 25%;}
+#success .box-0 .i3.active{left: 134.184466%;right: auto;top: auto;bottom: 22%;}
+#success .box-0 .box-left{width: 45.14563%;height: 452px;background-image: url("../images/images/success-left.png"/*tpa=http://www.huatec.com/images/images/success-left.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;left: -38.834951%;top: -12px;z-index: 2;}
+#success .box-0 .box-right{width: 49.51456%;height: 473px;background-image: url("../images/images/success-right.png"/*tpa=http://www.huatec.com/images/images/success-right.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;right: -36.893203%;top: -21px;z-index: 2;}
+#success .SplitScreen-btn{width: auto;right: 17px;top: 45%;text-align: center;}
+#success .SplitScreen-btn a{width: auto;margin: 15px 0;display: block;cursor: pointer;}
+#success .SplitScreen-btn a::after{width: 10px;height: 10px;left: 50%;top: 50%;margin: -5px auto 0;background: url("../images/images/hd-0.png"/*tpa=http://www.huatec.com/images/images/hd-0.png*/) no-repeat;-webkit-transition: all 0.1s ease-in-out;-moz-transition: all 0.1s ease-in-out;-o-transition: all 0.1s ease-in-out;transition: all 0.1s ease-in-out;display: block;content: '';}
+#success .SplitScreen-btn .on::after{width: 14px;height: 14px;margin: -7px auto 0;background: url("../images/images/hd-1.png"/*tpa=http://www.huatec.com/images/images/hd-1.png*/) no-repeat;}
+
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span{
+	width: 14px;
+	height: 14px;
+	margin: -7px 0 0 -7px;
+	background: url("../images/images/hd-1.png"/*tpa=http://www.huatec.com/images/images/hd-1.png*/) no-repeat;
+ }
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+	width: 10px;
+	height: 10px;
+    left: 50%;
+    top: 50%;
+    margin: -5px 0 0 -5px;
+    background: url("../images/images/hd-0.png"/*tpa=http://www.huatec.com/images/images/hd-0.png*/) no-repeat;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#topic .box-title{font-size: 40px;}
+#topic .box-brief{font-size: 14px;}
+
+.topicBanner{cursor: pointer;}
+
+.topic-bar-0{height: 519px;background-image: url("../images/images/topic-bg-0.jpg"/*tpa=http://www.huatec.com/images/images/topic-bg-0.jpg*/);background-repeat: no-repeat;background-position: center center;background-size: cover;}
+.topic-bar-0 .box{padding: 118px 0 73px;}
+.topic-bar-0 .box.i2{padding-top: 5%;}
+.topic-bar-0 .box .bd{width: 66.25%;margin: 0 auto;}
+.topic-bar-0 .box.i2 .bd{width: 85.5%;padding-top: 10px;}
+.topic-bar-0 .box .bar{left: 0;white-space: nowrap;}
+.topic-bar-0 .box .item{width: 100%;padding: 70px 0 15px 70px;}
+.topic-bar-0 .box.i2 .item{padding: 0;}
+.topic-bar-0 .box.i2 .item .date{color: #f3d929;background: url("../images/images/date-line.png"/*tpa=http://www.huatec.com/images/images/date-line.png*/) no-repeat left bottom;padding-bottom: 70px;}
+.topic-bar-0 .box.i2 .item .year{color: inherit;}
+.topic-bar-0 .box.i2 .item .img{width: 0;height: 0;padding: 10%;margin-left: 2%;}
+.topic-bar-0 .box.i2 .item .img::after{width: 100%;height: 100%;background-color: #fff;border: 1px solid #a7a7a7;position: absolute;left: 10px;top: -10px;content: '';}
+.topic-bar-0 .box.i2 .item .img .i{width: 100%;height: 100%;background-color: #dcdcdc;left: 0;top: 0;z-index: 2;}
+.topic-bar-0 .box.i2 .item .brief{width: 63.63636363%;margin-top: 115px;}
+.topic-bar-0 .box .item .ico{width: 234px;height: 150px;background-image: url("../images/images/topic-year-ico.png"/*tpa=http://www.huatec.com/images/images/topic-year-ico.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;left: 0;top: 0;}
+.topic-bar-0 .box .item .date{width: 115px;font-size: 18px;color: #555;}
+.topic-bar-0 .box .item .year{line-height: 40px;font-size: 50px;color: inherit;}
+.topic-bar-0 .box .item .brief{width: 79.310344%;line-height: 20px;font-size: 14px;color: #585858;white-space: normal;}
+.topic-bar-0 .box .hd{margin-top: 135px;}
+.topic-bar-0 .box .hd a{max-width: 150px;width: 20%;font-size: 16px;color: #555;margin: 0 3% 20px;vertical-align: top;}
+.topic-bar-0 .box .hd .on{color: #d8bd0a;}
+.topic-bar-0 .box .hd .on::after{width: 0;height: 0;border-bottom: 13px solid #f3d929;border-left: 11px solid transparent;border-right: 11px solid transparent;display: block;margin: 5px auto 0;content: '';}
+
+.topic-box-1{height: 802px;background-image: url("../images/images/topic-bg-1.jpg"/*tpa=http://www.huatec.com/images/images/topic-bg-1.jpg*/);background-repeat: no-repeat;background-position: center center;background-size: cover;padding: 55px 0 45px;}
+.topic-box-1 .box-title{color: #fff;}
+.topic-box-1 .box-brief{color: #fff;}
+.topic-box-1 .list-title{line-height: 34px;font-size: 20px;color: #fff;margin: 0 0 45px;}
+.topic-box-1 .i-list .i{height: 82px;padding: 55px 0 50px;border-top: 1px solid rgba(67,67,67,.5);box-sizing: content-box;}
+.topic-box-1 .i-list .ico{width: 10.5%;height: 82px;background-image: url("../images/images/topic-year-ico.png"/*tpa=http://www.huatec.com/images/images/topic-year-ico.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;left: 7px;top: 54px;}
+.topic-box-1 .i-list .num{width: 10%;height: 100%;font-weight: bold;font-size: 26px;color: #d6ba0b;padding-top: 20px;}
+.topic-box-1 .i-list .num *{font-weight: inherit;font-size: inherit;color: inherit;}
+.topic-box-1 .i-list .desc{width: 87.5%;height: 100%;line-height: 26px;font-size: 14px;color: #878787;}
+.topic-box-1 .i-list .desc *{font-size: inherit;color: inherit;}
+.topic-box-1 .i-list .table{width: 100%;height: 100%;display: table;}
+.topic-box-1 .i-list .table-cell{display: table-cell;}
+.topic-box-1 .list{margin-top: 25px;}
+.topic-box-1 .i5 .item{width: 22.5%;margin: 0 4.5% 25px;}
+.topic-box-1 .item{width: 38.333333%;margin: 0 5.83333% 30px;vertical-align: top;}
+.topic-box-1 .item .ico{width: 178px;height: 200px;background-image: url("../images/images/service-hexagon-1.png"/*tpa=http://www.huatec.com/images/images/service-hexagon-1.png*/);background-repeat: no-repeat;background-position: center center;background-size: cover;}
+.topic-box-1 .item .brief{line-height: 26px;color: #adadae;margin-top: 20px;}
+.topic-box-1 .topic-ico{width: 80%;margin: 9% auto 7%;}
+.topic-box-1 .topic-desc{line-height: 26px;font-size: 14px;color: #fff;}
+
+.topic-box-2{padding: 60px 0 0;}
+.topic-box-2 .box-title{font-size: 44px;color: #76c5f0;}
+.topic-box-2 .box-brief{color: #76c5f0;}
+.topic-box-2 .c0{color: #00a2ea;}
+.topic-box-2 .c1{color: #474747;}
+.topic-box-2 .topic-map{width: 790px;height: 710px;margin: 45px 0 0 12.5%;}
+.topic-box-2 .topic-map .map{width: 100%;height: 100%;background: url("../images/images/topic-map.png"/*tpa=http://www.huatec.com/images/images/topic-map.png*/) no-repeat center center;z-index: 2;}
+.topic-box-2 .topic-map .province{z-index: 3;}
+.topic-box-2 .school{width: 265px;line-height: 26px;background: rgba(246,246,246,.95);padding: 12px 0;border: 1px solid #ababab;border-radius: 5px;left: 50%;bottom: 120%;margin-left: -131px;display: none;}
+.topic-box-2 .school::before{width: 21px;height: 14px;background: url("../images/images/map-arrow.png"/*tpa=http://www.huatec.com/images/images/map-arrow.png*/) no-repeat;position: absolute;z-index: 1;left: 50%;top: 100%;margin-left: -10px;content: '';}
+.topic-box-2 .school::after{width: 100%;height: 1px;background-color: rgba(0,0,0,.08);box-shadow: 0 0 10px #000;border-radius: 20%;position: absolute;z-index: 1;left: 0;bottom: -14px;content: '';}
+.topic-box-2 .school .s{font-size: 14px;}
+.topic-box-2 .province:hover .school{display: block;}
+.topic-box-2 .map-tips{bottom: 30px;right: 0;}
+.topic-box-2 .map-tips .tips{line-height: 20px;font-size: 16px;margin: 0 20px;}
+.topic-box-2 .map-tips .tips span{font-size: inherit;}
+.topic-box-2 .map-tips .tips::before{width: 20px;height: 20px;margin-right: 5px;display: inline-block;vertical-align: middle;content: '';}
+.topic-box-2 .map-tips .c0::before{background-color: #00a2ea;}
+.topic-box-2 .map-tips .c1::before{background-color: #474747;}
+.topic-box-2 .map-hover{opacity: 0;}
+.topic-box-2 .map-hover.guangdong{width: 125px;height: 86px;right: 184px;bottom: 99px;background: url("../images/images/guangdong.png"/*tpa=http://www.huatec.com/images/images/guangdong.png*/);}
+.topic-box-2 .map-hover.guangxi{width: 114px;height: 84px;right: 275px;bottom: 115px;background: url("../images/images/guangxi.png"/*tpa=http://www.huatec.com/images/images/guangxi.png*/);}
+.topic-box-2 .map-hover.jiangxi{width: 67px;height: 94px;right: 175px;bottom: 172px;background: url("../images/images/jiangxi.png"/*tpa=http://www.huatec.com/images/images/jiangxi.png*/);}
+.topic-box-2 .map-hover.zhejiang{width: 56px;height: 62px;right: 118px;bottom: 228px;background: url("../images/images/zhejiang.png"/*tpa=http://www.huatec.com/images/images/zhejiang.png*/);}
+.topic-box-2 .map-hover.hunan{width: 81px;height: 88px;right: 239px;bottom: 176px;background: url("../images/images/hunan.png"/*tpa=http://www.huatec.com/images/images/hunan.png*/);}
+.topic-box-2 .map-hover.fujian{width: 66px;height: 77px;right: 136px;bottom: 161px;background: url("../images/images/fujian.png"/*tpa=http://www.huatec.com/images/images/fujian.png*/);}
+.topic-box-2 .map-hover.jiangsu{width: 79px;height: 72px;right: 125px;bottom: 292px;background: url("../images/images/jiangsu.png"/*tpa=http://www.huatec.com/images/images/jiangsu.png*/);}
+.topic-box-2 .map-hover.heilongjiang{width: 173px;height: 174px;right: 2px;top: 3px;background: url("../images/images/heilongjiang.png"/*tpa=http://www.huatec.com/images/images/heilongjiang.png*/);}
+.topic-box-2 .map-hover.liaoning{width: 87px;height: 83px;right: 96px;top: 192px;background: url("../images/images/liaoning.png"/*tpa=http://www.huatec.com/images/images/liaoning.png*/);}
+.topic-box-2 .map-hover.anhui{width: 62px;height: 86px;right: 159px;top: 364px;background: url("../images/images/anhui.png"/*tpa=http://www.huatec.com/images/images/anhui.png*/);}
+.topic-box-2 .map-hover.tianjin{width: 14px;height: 22px;right: 187px;top: 257px;background: url("../images/images/tianjin.png"/*tpa=http://www.huatec.com/images/images/tianjin.png*/);}
+.topic-box-2 .map-hover.chongqing{width: 52px;height: 70px;right: 302px;top: 403px;background: url("../images/images/chongqing.png"/*tpa=http://www.huatec.com/images/images/chongqing.png*/);}
+.topic-box-2 .map-hover.shandong{width: 103px;height: 70px;right: 124px;top: 287px;background: url("../images/images/shandong.png"/*tpa=http://www.huatec.com/images/images/shandong.png*/);}
+.topic-box-2 .map-hover.shanxi{width: 75px;height: 129px;right: 286px;top: 273px;background: url("../images/images/shanxi.png"/*tpa=http://www.huatec.com/images/images/shanxi.png*/);}
+.topic-box-2 .map-hover.shanxi2{width: 53px;height: 99px;right: 241px;top: 256px;background: url("../images/images/shanxi2.png"/*tpa=http://www.huatec.com/images/images/shanxi2.png*/);}
+.topic-box-2 .map-hover.henan{width: 86px;height: 83px;right: 210px;top: 328px;background: url("../images/images/henan.png"/*tpa=http://www.huatec.com/images/images/henan.png*/);}
+.topic-box-2 .map-hover.hubei{width: 114px;height: 70px;right: 215px;top: 385px;background: url("../images/images/hubei.png"/*tpa=http://www.huatec.com/images/images/hubei.png*/);}
+.topic-box-2 .map-hover.gansu{width: 192px;height: 193px;left: 277px;top: 200px;background: url("../images/images/gansu.png"/*tpa=http://www.huatec.com/images/images/gansu.png*/);}
+.topic-box-2 .map-hover.ningxia{width: 35px;height: 70px;left: 412px;top: 275px;background: url("../images/images/ningxia.png"/*tpa=http://www.huatec.com/images/images/ningxia.png*/);}
+.topic-box-2 .map-hover.qinghai{width: 189px;height: 131px;left: 201px;top: 261px;background: url("../images/images/qinghai.png"/*tpa=http://www.huatec.com/images/images/qinghai.png*/);}
+.topic-box-2 .map-hover.xinjiang{width: 309px;height: 239px;left: 3px;top: 68px;background: url("../images/images/xinjiang.png"/*tpa=http://www.huatec.com/images/images/xinjiang.png*/);}
+.topic-box-2 .map-hover.sichuan{width: 142px;height: 139px;left: 309px;top: 370px;background: url("../images/images/sichuan.png"/*tpa=http://www.huatec.com/images/images/sichuan.png*/);}
+.topic-box-2 .map-hover.guizhou{width: 78px;height: 71px;left: 397px;bottom: 178px;background: url("../images/images/guizhou.png"/*tpa=http://www.huatec.com/images/images/guizhou.png*/);}
+.topic-box-2 .province.guangdong:hover ~ .map-hover.guangdong{opacity: 1;}
+.topic-box-2 .province.guangxi:hover ~ .map-hover.guangxi{opacity: 1;}
+.topic-box-2 .province.guizhou:hover ~ .map-hover.guizhou{opacity: 1;}
+.topic-box-2 .province.jiangxi:hover ~ .map-hover.jiangxi{opacity: 1;}
+.topic-box-2 .province.zhejiang:hover ~ .map-hover.zhejiang{opacity: 1;}
+.topic-box-2 .province.hunan:hover ~ .map-hover.hunan{opacity: 1;}
+.topic-box-2 .province.fujian:hover ~ .map-hover.fujian{opacity: 1;}
+.topic-box-2 .province.jiangsu:hover ~ .map-hover.jiangsu{opacity: 1;}
+.topic-box-2 .province.heilongjiang:hover ~ .map-hover.heilongjiang{opacity: 1;}
+.topic-box-2 .province.liaoning:hover ~ .map-hover.liaoning{opacity: 1;}
+.topic-box-2 .province.anhui:hover ~ .map-hover.anhui{opacity: 1;}
+.topic-box-2 .province.tianjin:hover ~ .map-hover.tianjin{opacity: 1;}
+.topic-box-2 .province.chongqing:hover ~ .map-hover.chongqing{opacity: 1;}
+.topic-box-2 .province.shandong:hover ~ .map-hover.shandong{opacity: 1;}
+.topic-box-2 .province.shanxi:hover ~ .map-hover.shanxi{opacity: 1;}
+.topic-box-2 .province.shanxi2:hover ~ .map-hover.shanxi2{opacity: 1;}
+.topic-box-2 .province.henan:hover ~ .map-hover.henan{opacity: 1;}
+.topic-box-2 .province.hubei:hover ~ .map-hover.hubei{opacity: 1;}
+.topic-box-2 .province.gansu:hover ~ .map-hover.gansu{opacity: 1;}
+.topic-box-2 .province.ningxia:hover ~ .map-hover.ningxia{opacity: 1;}
+.topic-box-2 .province.qinghai:hover ~ .map-hover.qinghai{opacity: 1;}
+.topic-box-2 .province.xinjiang:hover ~ .map-hover.xinjiang{opacity: 1;}
+.topic-box-2 .province.sichuan:hover ~ .map-hover.sichuan{opacity: 1;}
+
+.news-list .item.first{background-color: transparent;padding: 0;border: 0;margin: 0 0 30px;}
+.news-list .item.first .img{width: 45%;padding: 0;margin: 0 2% 0 0;}
+.news-list .item.first .img:hover img{-ms-transform:scale(1.1,1.1);-moz-transform:scale(1.1,1.1);-webkit-transform:scale(1.1,1.1);-o-transform:scale(1.1,1.1);transform:scale(1.1,1.1);}
+.news-list .item.first .m{width: 51.25%;}
+.news-list .item.first .brief{font-size: 12px;max-height: 242px;line-height: 22px;}
+.news-list .item.first .more{margin: 0;}
+.news-list .item{background-color: #fafbff;border: 1px solid #e0e0e0;margin: 0 0 20px;}
+.news-list .item .img{width: 16.5%;padding: 18px 20px;margin-right: .25%;box-sizing: content-box;}
+.news-list .item .m{width: 65%;margin-top: 2%;}
+.news-list .item .name a{font-size: 16px;color: #363636;line-height: 22px;}
+.news-list .item .name a:hover{color: #76c5f0;}
+.news-list .item .name2{font-size: 14px;color: #363636;}
+.news-list .item .brief{height: 48px;line-height: 24px;font-size: 14px;color: #616161;margin-top: 2%;}
+.news-list .item .info{margin: 2% 4% 0 0;}
+.news-list .item .year{font-size: 14px;color: #bcbcbc;}
+.news-list .item .date{font-size: 28px;color: #7d7d7d;}
+.news-list .item .more{width: 25px;height: 25px;background: url("../images/images/more-0.png"/*tpa=http://www.huatec.com/images/images/more-0.png*/) no-repeat;margin-top: 10%;}
+.news-list .item .more:hover{background: url("../images/images/more-1.png"/*tpa=http://www.huatec.com/images/images/more-1.png*/) no-repeat;}
+.news-list .item:hover .img{background-color: #76c5f0;}
+
+.ajax-more{width: 100%;height: 60px;background: #eaeaea url("../images/images/see-0.png"/*tpa=http://www.huatec.com/images/images/see-0.png*/) no-repeat center center;}
+.ajax-more:hover{background: #76c5f0 url("../images/images/see-1.png"/*tpa=http://www.huatec.com/images/images/see-1.png*/) no-repeat center center;}
+
+.Con{min-height: 300px;line-height: 24px;}
+.Con *{font-size: inherit;font-family: inherit;color: inherit;line-height: inherit;}
+.Con img{max-width: 100% !important;}
+.maxCon{max-width: 1150px;width: 90%;margin: auto;}
+
+.news-detail-title{font-size: 20px;}
+.news-detail-title2{font-size: 20px;}
+.news-detail-info{font-size: 14px;color: #666;}
+.news-detail-info span{margin: 0 10px;}
+
+.news-bg{background: url("../images/images/news-bg.jpg"/*tpa=http://www.huatec.com/images/images/news-bg.jpg*/) no-repeat center top;}
+
+.book-list .book-row{background-image: url("../images/images/bookshelf.png"/*tpa=http://www.huatec.com/images/images/bookshelf.png*/);background-repeat: no-repeat;background-position: center 100%;background-size: 100% 120px;padding: 0 4.1666%;margin: 50px auto 0;}
+.book-list .book-row::after{content: '';clear: both;display: table;}
+.book-list .item{width: 19.509981%;margin: 0 2.7272%;}
+.book-list .img{width: 85.116279%;background-image: url("../images/images/book.png"/*tpa=http://www.huatec.com/images/images/book.png*/);background-repeat: no-repeat;background-position: right top;background-size: 100% auto;padding: 5px 5px 0 1px;margin: 0 auto;box-sizing: content-box;}
+.book-list .shadow{width: 117.4863%;height: 8px;left: -7%;bottom: -5px;background-image: url("../images/images/book-shadow.png"/*tpa=http://www.huatec.com/images/images/book-shadow.png*/);background-repeat: no-repeat;background-position: center bottom;background-size: 100% 8px;}
+.book-list .name{width: 120px;height: 48px;line-height: 24px;font-size: 14px;margin: 50px auto 0;}
+.book-list .name a{font-size: 14px;color: #464646;}
+.book-list .name a:hover{color: #76c5f0;}
+
+.video .button{top: 240px;}
+.video .prev{left: 40px;}
+.video .next{right: 40px;}
+.video-player{max-width: 910px;width: 100%;margin: 0 auto;}
+.video-player .player , .video-player video{width: 100%;height: 100%;}
+.video-brief{height:60px;line-height: 20px;font-size: 14px;color: #787878;}
+
+/*.video-item{width: 14.333333%;margin-right: 2.833333%;}*/
+.video-item .play{width: 100%;height: 100%;left: 0;top: 0;background: url("../images/images/video-play.png"/*tpa=http://www.huatec.com/images/images/video-play.png*/) no-repeat center center;z-index: 2;}
+.video-item .mask{width: 100%;height: 100%;left: 0;top: 0;background: #000;opacity: .5;}
+.video-item.on .mask{opacity: 0;}
+
+.silide-box .button{width: 15px;top: 40px;}
+.silide-box .prev{left: -30px;}
+.silide-box .next{right: -30px;}
+
+.join-bg{background: url("../images/images/join-bg.jpg"/*tpa=http://www.huatec.com/images/images/join-bg.jpg*/) no-repeat center top;}
+.join-list .item{width: 48.333333%;background-color: #9e9e9e;margin-bottom: 30px;}
+.join-list .pad{padding: 35px 40px 25px 40px;}
+.join-list .m{width: 72.4137%;}
+.join-list .name{font-size: 18px;color: #fff;}
+.join-list .salary{line-height: 25px;font-size: 14px;color: #fff;}
+.join-list .info{line-height: 25px;color: #fff;}
+.join-list .button{width: 57px;height: 57px;border: 1px solid #fff;border-radius: 100%;margin-top: 10px;}
+.join-list .button i{width: 100%;height: 100%;background: url("../images/images/arrow.png"/*tpa=http://www.huatec.com/images/images/arrow.png*/) no-repeat center center;}
+.join-list .button-down{-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}
+.join-list .con{width: 100%;height: 180%;padding: 20px;background: rgba(255,255,255,.95);box-shadow: 0 11px 5px rgba(0,0,0,.08);left: 0;top: 100%;display: none;}
+.join-list .con ul{max-height: 74%;overflow: auto;}
+.join-list .con ul li{line-height: 24px;color: #444;/*list-style-type:decimal;*/margin-left: 20px;}
+.join-list .send{width: 125px;height: 43px;line-height: 43px;font-size: 16px;color: #fff;background-color: #76c5f0;margin-left: 20px;}
+.join-list .email{font-size: 16px;color: #76c5f0;}
+.join-list .item:hover{z-index: 2;}
+.join-list .item:hover .button-up{margin-top: -100%;}
+.join-list .item:hover .pad{background-color: #76c5f0;}
+
+
+.keyword-list{min-height: 600px;}
+.keyword-list .item{line-height: 24px;border-bottom: 1px dashed #ccc;margin: 0 0 15px;}
+.keyword-list .item a{font-size: 16px;}
+
+
+.innerfooter #footer{position: relative;}
+#footer{width: 100%;height: 42px;line-height: 42px;border-top: 1px solid rgba(0,0,0,.05);background-color: rgba(255,255,255,.8);left: 0;bottom: 0;}
+#footer .copyright{color: #b5b5b3;margin-left: 1.5625%;}
+#footer .rig{margin-right: 1.5%;}
+#footer .rig > span{display: inline-block;}
+#footer .rig > span:first-child::before{width: 0;height: 0;border-top: 3px solid #000;border-left: 3px solid transparent;border-right: 3px solid transparent;margin-right: 3px;display: inline-block;vertical-align: middle;content: '';}
+
+.footer-info{max-width: 30%;line-height: 20px;right: 0;bottom: 100%;background-color: #fff;box-sizing: border-box;padding: 10px;display: none;overflow: auto;}
+.footer-info strong{font-size: 14px;}
+
+@media only screen and (max-height: 525px) , (max-width: 640px) {
+    #banner .font-box .f0{font-size: 40px;}
+    #banner .active .font-box .f0{font-size: 30px;}
+    #banner .font-box .f1{font-size: 50px;}
+}
+
+@media only screen and (max-height: 670px){
+    #banner .downBtn{width: 30px;height: 30px;margin-left: -15px;}
+}
+
+@media only screen and (max-width: 1440px) {
+    .maxCon{max-width: 910px;}
+
+    #success .box-0 .main{height: 385px;margin-top: 10px;}
+}
+
+@media only screen and (max-width: 1200px) {
+    .show-1200{display: block;}
+    .hide-1200{display: none;}
+
+    /*#header{height: auto;}*/
+    .nav{margin: 22px 0 22px 8%;width: 56%;}
+    .nav > .item > a{font-size: 14px;}
+    .nav .line{top: 160%;}
+
+    .index-introduce{margin-bottom: 2%;}
+    .index-introduce .introduces{width: 15%;height: 225px;margin-left: 13%;}
+    .index-introduce .introduces .ico{height: 50%;}
+    .index-introduce .introduces .i{background-size: 50% !important;}
+    .index-introduce .introduces .bg{background-size: auto 100%;background-position: center center;}
+    .index-introduce .introduces .brief{margin-top: 8px;}
+    .index-introduce .introduces .bg-0.bgl{clip: rect(0, 90px, 0, 0);}
+    .index-introduce .introduces .bg-0.bgr{clip: rect(113px, 140px, 113px, 90px);}
+    .index-introduce .introduces.bg-show .bg-0.bgl{clip: rect(0, 90px, 113px, 0);}
+    .index-introduce .introduces.bg-show .bg-0.bgr{clip: rect(0, 140px, 113px, 90px);}
+    .index-introduce .introduces:hover .s0{background-position: center center;}
+    .index-introduce .introduces:hover .bg-0.bgl{clip: rect(0, 90px, 0, 0);}
+    .index-introduce .introduces:hover .bg-0.bgr{clip: rect(113px, 140px, 113px, 90px);}
+
+    .about-development{background: none;}
+}
+
+
+@media only screen and (max-height: 860px) {
+    .special-box.i7 .prev{left: 0;}
+    .special-box.i7 .next{right: 0;}
+}
+
+@media only screen and (max-height: 700px) {
+    .index-introduce{margin-bottom: 2%;}
+    .index-introduce .introduces{width: 15%;height: 225px;margin-left: 13%;}
+    .index-introduce .introduces .ico{height: 50%;}
+    .index-introduce .introduces .i{background-size: 50% !important;}
+    .index-introduce .introduces .bg{background-size: auto 100%;background-position: center center;}
+    .index-introduce .introduces .brief{margin-top: 8px;}
+    .index-introduce .introduces .bg-0.bgl{clip: rect(0, 90px, 0, 0);}
+    .index-introduce .introduces .bg-0.bgr{clip: rect(113px, 140px, 113px, 90px);}
+    .index-introduce .introduces.bg-show .bg-0.bgl{clip: rect(0, 90px, 113px, 0);}
+    .index-introduce .introduces.bg-show .bg-0.bgr{clip: rect(0, 140px, 113px, 90px);}
+    .index-introduce .introduces:hover .s0{background-position: center center;}
+    .index-introduce .introduces:hover .bg-0.bgl{clip: rect(0, 90px, 0, 0);}
+    .index-introduce .introduces:hover .bg-0.bgr{clip: rect(113px, 140px, 113px, 90px);}
+
+    .focus-box .item{height: 345px;}
+
+    .special-box.i1 .img{height: auto;}
+    .special-box.i1 .hexagon{display: none;}
+
+    .service-special .special-name{font-size: 28px;}
+    .service-special .special-title{font-size: 16px;}
+
+    .instance-box-0{margin-top: 1%;}
+    .instance-box-0 .t::after{margin-top: 5px;margin-bottom: 5px;}
+
+    .service-box-1 .curve{display: none;}
+
+    .special-box.i9 .box .item{margin-top: 1%;margin-bottom: 1%;}
+
+    .flat-box .bd{width: 390px;height: 420px;background: none;padding: 0;}
+    .flat-box .bd div{height: 100%;}
+
+    .service-box-2{margin-top: 2%;}
+    .service-box-2 .round{width: 260px;height: 260px;}
+    .service-box-2 .title{font-size: 16px;}
+    .service-box-2 .title span{font-size: 24px;}
+    .service-box-2 .school{top: 34%;}
+
+    #success .box-0 .main{width: 25%;}
+    #success .box-0 .box-left{width: 40%;top: -6%;}
+    #success .box-0 .box-right{width: 40%;top: -8%;}
+
+    #success .box-0 .i1.active{bottom: 15%;}
+}
+
+@media only screen and (max-width: 1080px) {
+    /*#logo{width: auto;height: 48px;}*/
+
+    .nav{width: auto;background-color: rgba(0,0,0,.5);padding: 30px 0 0;margin: 0;right: -50%;top: 30px;position: absolute;z-index: 1;/*display: none;*/}
+    .nav.show{right: 0;}
+    .nav > .item{float: none;}
+    .nav .line{display: none;}
+    .top-rig{z-index: 2;margin-right: 35px;}
+    .top-rig .wechat{margin-left: 20px;}
+    .top-menu{display: block;margin-left: 20px;}
+
+    .service-list .m.rig .pad{padding-left: 10%}
+    .service-list .m.left .pad{padding-right: 10%;}
+    .service-list .brief br{display: none;}
+
+    .special-box.i9 .box .item{margin-left: 2%;margin-right: 2%;}
+
+    /*#success .table{max-width: none;width: 100%;height: 100%;display: table;}
+    #success .table-cell{display: table-cell;}*/
+}
+
+@media only screen and (max-width: 970px) {
+    .wrap{width: 95%;}
+
+    .show-970{display: block;}
+    .hide-970{display: none;}
+
+    #fp-nav{display: none;}
+
+    .tmp-banner{display: none;}
+
+    .innerheader #header{position: relative;}
+    .innerheader .header-blank{display: none;}
+
+    .innerBanner{height: 200px;overflow: hidden;}
+    .innerBanner img{max-width: none;max-height: 100%;margin-left: calc(50% - 670px);}
+    .topicBanner{height: 130px;overflow: hidden;}
+    .topicBanner img{max-width: none;max-height: 100%;margin-left: calc(50% - 487.5px);}
+
+    #header{height: 60px;}
+    #logo{height: 45px;margin-top: 7px;}
+    .top-rig{margin-top: 14px;}
+    .nav{top: 18px;}
+
+    #banner .bulletin .t{margin-right: 5%;}
+    #banner .bulletin .button{display: none;}
+    /*#banner .downBtn{display: none;}*/
+
+    .index-introduce .t1{font-size: 20px;}
+    .index-introduce .introduces{width: 25%;margin: 0;}
+    .index-introduce .introduces .i{position: static;width: 100%;height: 100%;margin: 0;background-size: auto 100% !important;}
+    .index-introduce .introduces .ico{height: 30%;}
+    .index-introduce .introduces:hover .s0{background-position: center center;}
+    .index-introduce .introduces .s1{display: none;}
+    .index-introduce .introduces .name{font-size: 16px;}
+    .index-introduce .introduces .brief{padding: 0 5%;margin: 10px 0 0;}
+
+    .inner-menu .menu-a{font-size: 16px;}
+
+    .Con{min-height: 100px;font-size: 16px;}
+
+    .about-brief .since{position: static;padding: 0;margin: 20px 0;background: none;float: right;}
+    .about-brief .group-img{display: none;}
+    .about-brief .main{width: 100%;position: static;clear: both;}
+    .about-brief .title{margin: 0;}
+    .about-brief .line{width: 100%;margin: 0;padding: 0;float: none;}
+    .about-brief .brief{padding: 10px;margin-bottom: 20px;}
+
+    .about-brand{height: auto;background: none;}
+    .brand-item{width: 100%;padding: 0;margin: 30px 0 !important;float: none;}
+    .brand-item .ico{width: 30%;margin: 0 5% 2% 0;float: left;}
+    .brand-item .name{text-align: left;margin-top: 20px;}
+    .brand-item .brief{text-align: left;margin: 0 0 10px;}
+    .brand-item .main-box{position: static;}
+    .brand-item .main-box .bor{min-height: 0;background: none;border: 0;padding: 0;}
+    .brand-item .main-title{display: none;}
+    .brand-item .main-subtitle{display: none;/*font-size: 16px;*/}
+    .brand-item .main-brief{font-size: 14px;}
+    .brand-item .plus{display: none;}
+
+    .about-institute{height: auto;background: none;padding-bottom: 30px;}
+    .about-institute .wrap{font-size: 0;}
+    .institute-item{height: auto;display: inline-block;float: none;vertical-align: top;}
+    .institute-item:nth-child(1) , .institute-item:nth-child(3){padding-right: 3%;}
+    .institute-item:nth-child(2) , .institute-item:nth-child(4){padding-left: 3%;}
+    .institute-item .line{display: none;}
+    .institute-item .brief{margin-top: 10px !important;}
+
+    .service-special .special-name{font-size: 28px;}
+    .service-special .service-down{display: none;}
+
+    .m-service-special .special-name{font-size: 24px;}
+    .m-service-special .special-title{font-size: 18px;}
+
+    .special-box.i2{margin-top: 0;}
+    .special-box.i2 .ext , .special-box.i2 .on{width: 50%;height: auto;margin: 30px 0;}
+    .special-box.i2 .on{transform:rotate(0deg);}
+    .special-box.i2 .on .ico{display: block;}
+    .special-box.i2 .on .name{display: block;}
+    .special-box.i2 .on .round{display: none;}
+    .special-box.i2 .line{display: none;}
+    .special-box.i2 .brief{display: block;opacity: 1;color: #fff;}
+    .special-box.i2 .brief a{color: inherit;}
+
+    .special-box.i3 .item{width: 100% !important;padding: 0 10%;margin: 30px 0;}
+    .special-box.i3 .top{padding: 0;margin: 0;}
+    .special-box.i3 .brief{height: auto;}
+
+    .special-box.i4{margin-top: 0;}
+    .special-box.i4 .item{width: 90%;padding: 0;margin: 20px auto;float: none;}
+    .special-box.i4 .ico{display: none;}
+    .special-box.i4 .title{display: none;}
+    .special-box.i4 .main{position: static;}
+    .special-box.i4 .bor{max-height: none;padding: 20px;border: 0;}
+    .special-box.i4 .plus{display: none;}
+
+    .special-box.i6 .item{width: 50%;}
+
+    .special-box.i7 .item{margin-bottom: 50px;}
+    .special-box.i7 .pyramid{width: 100%;height: auto;background: none;margin-left: 0;}
+    .special-box.i7 .pyramid .main{width: auto;}
+    .special-box.i7 .pyramid2{display: none;}
+    .special-box.i7 .list .t{display: none;}
+    .special-box.i7 .list .main{position: static;}
+    .special-box.i7 .list .table{display: block;}
+
+    .special-box.i10 .box{margin-top: 20px;}
+    .special-box.i10 .box .bar{white-space: normal;}
+    .special-box.i10 .box .item{width: 46%;margin: 1.5%;}
+    .special-box.i10 .box .item .title{font-size: 24px;}
+
+    .instance-box-0{width: 90%;}
+    .instance-box-0 .box-row::before{display: none;}
+    .instance-box-0 .box-row::after{width: 0;height:0;clear: both;position: static;}
+    .instance-box-0 .box-row .line{display: none;}
+    .instance-box-0 .title{width: 15%;height: 100%;margin: 0 3% 0 0;}
+    .instance-box-0 .title.bg{background: none;}
+    .instance-box-0 .item{width: 20%;margin-right: 3%;}
+    .instance-box-0 .item.c2{width: 35%;}
+    .instance-box-0 .service-hexagon-0{display: none;}
+    .instance-box-0 .imgs{width: 16%;margin-right: 2%;}
+    .instance-box-0 .icos{width: 10%;background: none;margin-right: 1%;}
+
+    .service-box-2 .bar{white-space: normal;}
+    .service-box-2 .item{margin-bottom: 80px;}
+    .service-box-2 .button{display: none;}
+    .service-box-2 .rotary{display: none;}
+    .service-box-2 .round{width: 200px;height: 170px;}
+    .service-box-2 .school{top: 40px;}
+
+    #success .success-bg{height: auto;background: #ededed none;}
+    #success .font-list{padding: 0;}
+    #success .font-list .item{width: 100%;margin: 40px 0;}
+    #success .slide-box .title{font-size: 16px;}
+    #success .slide-box .hexagon{display: none;}
+    #success .slide-box .ico{height: 150px;}
+    #success .slide-box .ico ~ [class^='blank']{display: none;}
+
+    #success .box-0 .main{width: auto;height: auto;font-size: 0;margin: 30px auto;}
+    #success .box-0 .main .name-1{margin: 10px 0;}
+    #success .box-0 .main > .table{margin-bottom: 20px;}
+    #success .box-0 .main .m{width: 98%;margin: 0 auto 10px;}
+    #success .box-0 .round{display: none;}
+    #success .box-0 .box-left{display: none;}
+    #success .box-0 .box-right{display: none;}
+    #success .box-0 .i[class]{width: 48%;background: none;padding: 0;margin: 10px 1%;position: static;display: inline-block;opacity: 1;vertical-align: top;}
+    #success .box-0 .brief{width: 100%;position: static;text-align: center !important;display: block;}
+
+    #success .success-bg-3{height:  auto !important;padding: 20px 0;}
+
+    .focus-box .bd , .focus-box .hd{width: 90%;}
+    .focus-box .button{display: none;}
+
+    #topic .box-title{font-size: 24px;}
+
+    .topic-bar-0{height: auto;background: none;}
+    .topic-bar-0 .box{padding: 50px 0;}
+    .topic-bar-0 .box .bd{width: 100%;}
+    .topic-bar-0 .box .item{padding: 0;}
+    .topic-bar-0 .box .item .ico{display: none;}
+    .topic-bar-0 .box .item .date{width: auto;text-align: center;float: none;}
+    .topic-bar-0 .box.i2 .item .date{background: none;padding: 0;margin-bottom: 20px;}
+    .topic-bar-0 .box.i2 .item .img{margin-left: 0;}
+    .topic-bar-0 .box.i2 .item .brief{width: 76%;margin-top: 10px;}
+    .topic-bar-0 .box .item .year{font-size: 24px;display: inline-block;margin-right: 10px;}
+    .topic-bar-0 .box .item .brief{width: 100%;font-size: 16px;margin-top: 20px;}
+    .topic-bar-0 .box .hd{margin-top: 50px;}
+    .topic-bar-0 .box .hd .on::after{display: none;}
+
+    .topic-box-1{height: auto;background: #282828;}
+    .topic-box-1 .list-title{font-size: 18px}
+    .topic-box-1 .i-list .i{height: auto;padding: 20px 0;}
+    .topic-box-1 .i-list .ico{display: none;}
+    .topic-box-1 .i-list .num{width: 5%;}
+    .topic-box-1 .topic-ico{margin: 0 auto 5%;}
+    .topic-box-1 .item .ico{height: auto;background-image: none;margin-bottom: 10px;}
+
+    .topic-box-2{display: none;}
+
+    .topic-box-1 .i5 .item{max-width: 180px;width: 44%;margin: 0 3% 20px;}
+    .topic-box-1 .item .ico{width: 100%;background-size: 100% auto;}
+
+    .flat-box .bd{width: 100%;height: auto;background-image: url("../images/images/flat.png"/*tpa=http://www.huatec.com/images/images/flat.png*/);background-repeat: no-repeat;background-position: center center;background-size: 100% auto;padding: 4.70588% 13.2352% 7.352941% 14.264705%;}
+
+    .team-list .list{background-color: #fff;border-radius: 10px;border:1px solid #ededed;}
+    .team-list .list::after{display: table;content: '';clear: both;}
+    .team-list .list .img{max-width: 218px;width: 30%;height: auto;position: static;float: left;margin: 0 2%;}
+    .team-list .list .m{height: auto;padding: 0;border: 0;}
+
+    /*.service-list .wrap{height: auto !important;}*/
+    .service-list .brief{display: none;}
+
+    .news-list .item[class~="list"] .img{padding: 0;width: 25%;margin-right: 3%;}
+    .news-list .item[class~="list"] .name{white-space: normal;}
+    .news-list .item .brief{display: none;}
+    .news-list .item[class~="list"] .info{width: 71%;float: right;margin: 2% 0;}
+    .news-list .item[class~="list"] .date{line-height: 25px;font-size: 14px;float: left;}
+    .news-list .item[class~="list"] .year{line-height: 25px;float: left;margin: 0 2%;}
+    .news-list .item[class~="list"] .more{line-height: 25px;float: left;margin-top: 0;}
+
+    .news-bg{background: none;}
+    .book-list .book-row{background: none;margin: 0;padding: 0;}
+    .book-list .book-row::after{display: none;}
+    .book-list .item{width: 28%;margin: 10px 2.666666%;}
+    .book-list .name{margin-top: 10px;}
+
+    .video .button{display: none;}
+    .video-brief{height: auto;}
+
+    .join-bg{background: none;}
+    .join-list .item{width: 100%;}
+    .join-list .con{position: static;}
+    .join-list .item.on{z-index: 2;}
+    .join-list .item.on .button-up{margin-top: -100%;}
+    .join-list .item.on .pad{background-color: #76c5f0;}
+
+    #footer{height: auto;line-height: 28px;}
+    #footer .copyright , #footer .rig{width: 95%;float: none;margin: 0 auto;}
+    #footer .copyright{line-height: 20px;}
+    /*#footer .rig{position: relative;z-index: 1;}*/
+    .footer-info{max-width: none;width: 100%;right: auto;left: 0;bottom: 50px;overflow-y: auto;position: fixed;z-index: 10;}
+    /*.footer-info{max-width: none;width: 80%;height: 80%;left: 10%;bottom: 10%;position: fixed;overflow-y: auto;}*/
+
+
+}
+
+@media only screen and (max-width: 860px) {
+    .index-introduce .introduces:hover .brief{display: none;}
+}
+
+@media only screen and (max-width: 640px) {
+    /*#logo{width: 30%;}*/
+
+    .show-640{display: block;}
+    .hide-640{display: none;}
+
+    #banner .font-box{margin: 25% auto;}
+    #banner .banner-btm{height: auto;line-height:normal;background: none;}
+    #banner .bulletin{width: 90%;line-height: 30px;margin: 0 auto;float: none;}
+    #banner .bulletin .t{background: none;padding: 0;margin-right: 10px;}
+    #banner .bulletin .bd{margin: 0;}
+    #banner .banner-hd{width: 90%;margin: 0 auto;float: none;}
+    #banner .downBtn{bottom: 20%;}
+
+    .index-introduce .introduces{width: 46%;height: auto;line-height: 100px;text-align: left;margin: 1% 2% !important;}
+    .index-introduce .introduces .i{height: 100%;background-size: 100% auto !important;}
+    .index-introduce .introduces .ico{width: 20%;float: left;}
+    .index-introduce .introduces .name{width: 70%;font-size: 16px;margin: 0;float: right;}
+    .index-introduce .introduces .brief{display: none;}
+
+    .index-learn{margin-top: 8%;}
+    .index-learn .item{background: none;padding: 0;}
+
+    .inner-menu .menu-a{height: auto;line-height: 30px;font-size: 16px;margin: 0;text-align: left;display: block;}
+    .inner-menu .menu-a.on::after{position: static;}
+    .team-category > a{width: 100%;padding: 0;text-align: left;display: block;}
+    .team-category > .on{border: 0;}
+
+    .about-img{max-width: 100%;width: auto;margin: 10px auto !important;float: none;display: block;}
+
+    /*.brand-item .main-box{display: none;}*/
+    .brand-item .ico{width: 80%;margin: 0 auto;float: none;}
+    .brand-item .name{text-align: center;}
+    .brand-item .brief{text-align: center;}
+
+    .team-list .list{padding: 15px;}
+    .team-list .list .title{font-size: 16px;}
+    .team-list .list .brief{height: auto;font-size: 16px;overflow: visible;}
+    .team-list .list .brief br{display: none;}
+
+    .institute-item{width: 50%;margin: 10px 0;}
+
+    .service-list .pad{padding: 0 2% !important;}
+    .service-list .arrow{display: none;}
+    .service-list .name{font-size: 18px;}
+    .service-list .more{margin-top: 5px;}
+    .service-list .more i{display: none;}
+
+    .special-box.i1 .item{width: 100%;}
+    .special-box.i1 .name-0{font-size: 18px;}
+    .special-box.i1 .name-1{font-size: 16px;opacity: .5;}
+
+    .special-box.i2 .ext{width: 100%;}
+    .special-box.i2 .brief{padding: 0;}
+
+    .special-box.i3 .name_0{font-size: 40px;}
+
+    .special-box.i9 .box .item{}
+
+    .m-service-special .special-title{font-size: 16px;}
+
+
+    .service-box-1 .hexagon{width: 30%;height: 200px;background: none;margin: 0 1.5%;}
+    .service-box-1 .hexagon .brief{display: none;}
+
+    .service-box-1 .icos .ico{width: 10%;margin: 0 5%;}
+
+    .service-box-2 .round{height: auto;}
+    .service-box-2 .school{width: 100%;position: static;margin: 20px auto;}
+    .service-box-2 .school > div{font-size: 16px;color: #c39f63 !important;}
+    .service-box-2 .service-arrow-0{display: none;}
+
+    #success #header{position: static;}
+    #success #footer{position: static;}
+    #success .success-title-0{font-size: 20px;padding-left: 3%;padding-right: 3%;}
+    #success .success-title-1{font-size: 16px;padding-left: 3%;padding-right: 3%;}
+    #success .success-down{display: none;}
+
+    #success .success-bg-2{height: auto !important;background-color: #222;padding: 40px 0;}
+    #success .slide-box .bar{left: 0 !important;white-space: normal;}
+    #success .slide-box .item{margin-bottom: 20px;}
+    #success .slide-box .item::before , #success .slide-box .item::after{box-sizing: content-box;display: none;}
+    #success .slide-box .i{width: 50%;max-width: none;margin: 0 0 15px;float: left !important;}
+    #success .slide-box .hd{display: none;}
+
+    #success .font-list .item .top{font-size: 20px;}
+
+    #success .success-bg-3{height: auto !important;background: #2C2C2C;padding: 30px 0;}
+    #success .box-0 .main{width: 90%;max-width: none;margin: 0 auto;}
+
+    .topic-box-1 .item{width: 100%;margin: 0 0 30px;}
+    .topic-box-1 .item .brief{font-size: 16px;}
+
+    .focus-box .hd{display: none;}
+    .focus-box .txt{height: 30px;line-height: 30px;padding: 0 10px;}
+
+    .instance-box-0 .box-row{height: auto;margin: 0 0 20px;}
+    .instance-box-0 .title{width: 100%;margin: 0 0 20px;float: none;}
+    .instance-box-0 .item{width: 30%;margin: 0;}
+    .instance-box-0 .item.c2{width: 65%;float: right;}
+    .instance-box-0 .imgs{width: 24%;margin-right: 1%;}
+    .instance-box-0 .imgs:last-child{margin-right: 0;}
+    .instance-box-0 .icos{width: 14%;margin: 0;}
+
+    .book-list .item{width: 44%;margin: 10px 3%;}
+
+    .join-list .pad{padding: 3% 5%;}
+    .join-list .con{padding: 3%;}
+
+    .topic-bar-0 .box .hd a{width: 46%;margin: 20px 2%;}
+    .topic-bar-0 .box.i2 .item .img{width: auto;max-width: 100%;height: auto;float: none;margin: 0 auto;padding: 0;}
+    .topic-bar-0 .box.i2 .item .img::after{display: none;}
+    .topic-bar-0 .box.i2 .item .img .i{width: auto;height: auto;background: none;position: relative;float: none;text-align: center;}
+    .topic-bar-0 .box.i2 .item .brief{width: 100%;float: none;}
+}
+
+@media only screen and (max-width: 480px) {
+    .top-search{display: none;}
+    .top-rig .wechat{display: none;}
+
+    #banner .bulletin .t{display: none;}
+    #banner .bulletin .bd{width: 100%;}
+    #banner .font-box .f0{font-size: 24px;}
+    #banner .font-box .f1{line-height: normal;font-size: 30px;}
+
+    .index-introduce .introduces .ico{height: 60px;}
+    .index-introduce .introduces .bg{display: none;}
+    .index-introduce .introduces .name{line-height: 60px;font-size: 14px;white-space: nowrap;}
+
+    .brand-item .name{font-size: 16px;}
+    .brand-item .main-title{font-size: 16px;}
+    .brand-item .main-subtitle{font-size: 14px;}
+
+    .team-list .list .name{font-size: 20px;}
+
+    .service-list .name{font-size: 16px;}
+
+    .news-list .item[class~="list"] .img{width: 30%;}
+    .news-list .item[class~="list"] .info{width: 67%;}
+
+    .service-box-1 .hexagon{width: 100%;height: auto;}
+    .service-box-1 .icos .ico{width: 26%;margin: 3%;}
+
+}
